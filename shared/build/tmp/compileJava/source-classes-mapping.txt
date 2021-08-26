@@ -27,7 +27,32 @@ gson/Deserializer.java
  gson.Deserializer
 gson/Constants.java
  gson.Constants
-event/EventVisitor.java
- event.EventVisitor
 gson/Serializer.java
  gson.Serializer
+config/Config.java
+ config.Config
+event/EventVisitor.java
+ event.EventVisitor
+event/Event.java
+ event.Event
+event/component/tweetComponent/TweetEvent.java
+ event.component.tweetComponent.TweetEvent
+event/newTweet/NewTweetEvent.java
+ event.newTweet.NewTweetEvent
+event/settings/ComboBoxEvent.java
+ event.settings.ComboBoxEvent
+event/auth/FormEvent.java
+ event.auth.FormEvent
+event/auth/signIn/SignInFormEvent.java
+ event.auth.signIn.SignInFormEvent
+event/StringEvent.java
+ event.StringEvent
+event/settings/ChangePassEvent.java
+ event.settings.ChangePassEvent
+event/component/tweetViewer/TweetViewerEvent.java
+ event.component.tweetViewer.TweetViewerEvent
+event/settings/SettingsStringEvent.java
+ event.settings.SettingsStringEvent
+event/auth/registration/RegistrationFormEvent.java
+ event.auth.registration.RegistrationFormEvent
+ event.auth.registration.RegistrationFormEvent$RegFormEventLevel
