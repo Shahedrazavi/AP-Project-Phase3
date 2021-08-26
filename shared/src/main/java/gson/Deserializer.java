@@ -4,7 +4,7 @@ import com.google.gson.*;
 
 import java.lang.reflect.Type;
 
-import static ap.mini_project.shared.gson.Constants.*;
+import static gson.Constants.*;
 
 public class Deserializer<T> implements JsonDeserializer<T> {
     public Deserializer() {

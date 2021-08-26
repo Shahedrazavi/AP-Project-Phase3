@@ -7,7 +7,7 @@ import com.google.gson.JsonSerializer;
 
 import java.lang.reflect.Type;
 
-import static ap.mini_project.shared.gson.Constants.*;
+import static gson.Constants.*;
 
 public class Serializer<T> implements JsonSerializer<T> {
 

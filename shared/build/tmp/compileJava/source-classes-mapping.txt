@@ -23,3 +23,11 @@ model/GroupChat.java
  model.GroupChat
 model/ID.java
  model.ID
+gson/Deserializer.java
+ gson.Deserializer
+gson/Constants.java
+ gson.Constants
+event/EventVisitor.java
+ event.EventVisitor
+gson/Serializer.java
+ gson.Serializer
