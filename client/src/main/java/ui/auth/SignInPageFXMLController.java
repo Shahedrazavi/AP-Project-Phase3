@@ -11,8 +11,6 @@ import java.util.ResourceBundle;
 
 public class SignInPageFXMLController extends FXMLController {
 
-    private GraphicalAgent graphicalAgent;
-
     private SignInPage page;
 
     @FXML
@@ -35,7 +33,7 @@ public class SignInPageFXMLController extends FXMLController {
     }
 
     public void goToHomePage(User loggedInUser){
-//        graphicalAgent.startMainApp(loggedInUser);
+        page.getGraphicalAgent().startMainApp(loggedInUser);
     }
 
 }

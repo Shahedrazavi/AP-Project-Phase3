@@ -4,7 +4,6 @@ import event.auth.signIn.SignInFormEvent;
 import model.User;
 import response.Response;
 import response.auth.signIn.SignInResponse;
-import ui.auth.signIn.SignInCenterFXMLController;
 import util.Logger;
 
 public class SignInPageLogic {
@@ -13,6 +12,7 @@ public class SignInPageLogic {
 
     public SignInPageLogic() {
         this.signInController = new SignInController();
+        response = new SignInResponse();
     }
 
     public Response check(SignInFormEvent formEvent){
@@ -51,18 +51,12 @@ public class SignInPageLogic {
         if (formEvent.getUsername().isEmpty()){
             return false;
         }
-        if (formEvent.getPassword().isEmpty()){
-            return false;
-        }
-
-        return true;
+        return !formEvent.getPassword().isEmpty();
     }
 
     public User logIn(SignInFormEvent formEvent){
-        return signInController.getUser(formEvent.getUsername());
-
-//        SignInCenterFXMLController controller = (SignInCenterFXMLController) formEvent.getSource();
-//        Logger.getLogger().signIn(loggedInUser.getUsername(),loggedInUser.getId().toString());
-//        controller.goToHomePage(loggedInUser);
+        User loggedInUser = signInController.getUser(formEvent.getUsername());
+        Logger.getLogger().signIn(loggedInUser.getUsername(),loggedInUser.getId().toString());
+        return loggedInUser;
     }
 }

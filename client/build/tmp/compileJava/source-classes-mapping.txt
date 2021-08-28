@@ -1,60 +1,82 @@
-listener/network/SocketEventSender.java
- listener.network.SocketEventSender
-listener/auth/signIn/SignInFormListener.java
- listener.auth.signIn.SignInFormListener
-listener/EventListener.java
- listener.EventListener
 ui/FXMLController.java
  ui.FXMLController
 ui/MainStage.java
  ui.MainStage
 config/Config.java
  config.Config
+listener/EventListener.java
+ listener.EventListener
+listener/network/SocketEventSender.java
+ listener.network.SocketEventSender
+util/Logger.java
+ util.Logger
+listener/sidebar/SidebarListener.java
+ listener.sidebar.SidebarListener
+MainApp.java
+ MainApp
 listener/EventSender.java
  listener.EventSender
-ui/auth/registration/RegistrationPage2.java
- ui.auth.registration.RegistrationPage2
-ui/GraphicalAgent.java
- ui.GraphicalAgent
-ui/Page.java
- ui.Page
-ui/auth/registration/RegistrationPage2FXMLController.java
- ui.auth.registration.RegistrationPage2FXMLController
+ui/sidebar/Sidebar.java
+ ui.sidebar.Sidebar
 ui/opening/OpeningPageFXMLController.java
  ui.opening.OpeningPageFXMLController
 ui/auth/registration/RegistrationPage1.java
  ui.auth.registration.RegistrationPage1
 ui/auth/SignUpPage.java
  ui.auth.SignUpPage
-ui/auth/registration/RegistrationPage1FXMLController.java
- ui.auth.registration.RegistrationPage1FXMLController
-listener/auth/registration/RegistrationFormListener2.java
- listener.auth.registration.RegistrationFormListener2
+listener/settings/ChangePassListener.java
+ listener.settings.ChangePassListener
 listener/Listener.java
  listener.Listener
 ui/Component.java
  ui.Component
-ui/opening/OpeningPage.java
- ui.opening.OpeningPage
-listener/opening/OpeningListener.java
- listener.opening.OpeningListener
-ui/auth/signIn/SignInCenter.java
- ui.auth.signIn.SignInCenter
-listener/auth/registration/RegistrationFormListener1.java
- listener.auth.registration.RegistrationFormListener1
 ui/auth/SignInPage.java
  ui.auth.SignInPage
 ui/auth/SignUpPageFXMLController.java
  ui.auth.SignUpPageFXMLController
+ui/auth/signIn/SignInCenterFXMLController.java
+ ui.auth.signIn.SignInCenterFXMLController
+ui/settings/SettingsFXMLController.java
+ ui.settings.SettingsFXMLController
+listener/auth/signIn/SignInFormListener.java
+ listener.auth.signIn.SignInFormListener
+ui/mainView/MainViewFXMLController.java
+ ui.mainView.MainViewFXMLController
+ui/auth/registration/RegistrationPage2.java
+ ui.auth.registration.RegistrationPage2
+ui/GraphicalAgent.java
+ ui.GraphicalAgent
+listener/settings/ComboBoxListener.java
+ listener.settings.ComboBoxListener
+ui/settings/Settings.java
+ ui.settings.Settings
+ui/Page.java
+ ui.Page
+ui/auth/registration/RegistrationPage2FXMLController.java
+ ui.auth.registration.RegistrationPage2FXMLController
+ui/auth/registration/RegistrationPage1FXMLController.java
+ ui.auth.registration.RegistrationPage1FXMLController
+ui/mainView/MainPage.java
+ ui.mainView.MainPage
+listener/auth/registration/RegistrationFormListener2.java
+ listener.auth.registration.RegistrationFormListener2
+listener/settings/SettingsListener.java
+ listener.settings.SettingsListener
+ui/opening/OpeningPage.java
+ ui.opening.OpeningPage
+ui/auth/signIn/SignInCenter.java
+ ui.auth.signIn.SignInCenter
+LogicalAgent.java
+ LogicalAgent
 ui/component/backButton/BackButtonFXMLController.java
  ui.component.backButton.BackButtonFXMLController
 ui/component/backButton/BackButton.java
  ui.component.backButton.BackButton
-ui/auth/signIn/SignInCenterFXMLController.java
- ui.auth.signIn.SignInCenterFXMLController
 ui/auth/SignInPageFXMLController.java
  ui.auth.SignInPageFXMLController
-MainApp.java
- MainApp
-LogicalAgent.java
- LogicalAgent
+listener/auth/registration/RegistrationFormListener1.java
+ listener.auth.registration.RegistrationFormListener1
+listener/opening/OpeningListener.java
+ listener.opening.OpeningListener
+ui/sidebar/SidebarFXMLController.java
+ ui.sidebar.SidebarFXMLController

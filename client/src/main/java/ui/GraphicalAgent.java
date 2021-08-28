@@ -3,8 +3,10 @@ package ui;
 import event.Event;
 import javafx.stage.Stage;
 import listener.EventListener;
+import model.User;
 import ui.auth.SignInPage;
 import ui.auth.SignUpPage;
+import ui.mainView.MainPage;
 import ui.opening.OpeningPage;
 
 import java.util.Stack;
@@ -16,6 +18,7 @@ public class GraphicalAgent {
 
     private Stage stage;
     private Page page;
+    private MainPage mainPage;
 
 
     public GraphicalAgent(EventListener listener, Stage stage) {
@@ -30,9 +33,7 @@ public class GraphicalAgent {
 
     public void initialize(){
         page = new OpeningPage("opening" ,this);
-//        stage = new MainStage();
-        stage.setWidth(1000);
-        stage.setHeight(800);
+        stage = new MainStage();
         pageStack.add(page);
         stage.setScene(page.getScene());
 //        stage.initStyle(StageStyle.UNDECORATED);
@@ -47,6 +48,15 @@ public class GraphicalAgent {
 
     public void goToSignUp(Event event){
         page = new SignUpPage("signUp" , this);
+        pageStack.add(page);
+        stage.setScene(page.getScene());
+    }
+
+    public void startMainApp(User user){
+        MainPage mainPage = new MainPage(user,this,"main" );
+        page = mainPage;
+        this.mainPage = mainPage;
+        pageStack.pop();
         pageStack.add(page);
         stage.setScene(page.getScene());
     }

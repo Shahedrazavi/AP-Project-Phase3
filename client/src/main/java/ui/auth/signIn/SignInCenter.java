@@ -20,6 +20,7 @@ public class SignInCenter extends Component {
         backButton = new BackButton("backButton",graphicalAgent);
         controller.setComponent(this);
         controller.makeContents();
+        controller.setListener();
     }
 
     public Component getBackButton() {

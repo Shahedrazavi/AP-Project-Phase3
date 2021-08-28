@@ -33,7 +33,7 @@ public class ClientHandler extends Thread implements EventVisitor {
                 responseSender.sendResponse(event.visit(this));
                 System.out.println("sent response");
             }catch (Exception e){
-
+                e.printStackTrace();
             }
         }
         responseSender.close();

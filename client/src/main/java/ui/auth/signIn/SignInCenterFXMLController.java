@@ -43,8 +43,6 @@ public class SignInCenterFXMLController extends FXMLController{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         errorLabel.setVisible(false);
-
-        listener = new SignInFormListener(component.getGraphicalAgent());
     }
 
     @Override
@@ -60,6 +58,10 @@ public class SignInCenterFXMLController extends FXMLController{
         this.component = component;
     }
 
+    public void setListener(){
+        listener = new SignInFormListener(component.getGraphicalAgent());
+    }
+
     @FXML
     void signInPressed(ActionEvent event) {
         listener.eventOccurred(new SignInFormEvent(this,usernameBox.getText(), passwordBox.getText()));
@@ -67,10 +69,10 @@ public class SignInCenterFXMLController extends FXMLController{
 
     public void finalizeComp(SignInResponse response){
         if (response.isValid()){
-            goToHomePage();
+            goToHomePage(response.getSignedInUser());
         }
         else {
-            setErrors(response);
+            errorLabel.setVisible(!response.isValid());
         }
     }
 

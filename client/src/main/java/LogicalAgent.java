@@ -70,7 +70,6 @@ public class LogicalAgent implements ResponseVisitor {
 
     @Override
     public void finalizeRegPage1(RegPage1Response regPage1Response) {
-//        ((RegistrationPage1FXMLController) graphicalAgent.getPage().getFxmlController()).finalizePage(regPage1Response);
         ((RegistrationPage1FXMLController)((SignUpPage)graphicalAgent.getPage()).getPage1().getFxmlController()).finalizePage(regPage1Response);
     }
 

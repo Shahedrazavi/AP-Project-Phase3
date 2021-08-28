@@ -11,7 +11,6 @@ public class RegPage2Response extends Response {
         responseVisitor.finalizeRegPage2(this);
     }
 
-
     public boolean isValid() {
         return isValid;
     }
