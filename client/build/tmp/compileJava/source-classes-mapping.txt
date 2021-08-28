@@ -4,20 +4,12 @@ ui/MainStage.java
  ui.MainStage
 config/Config.java
  config.Config
-listener/EventListener.java
- listener.EventListener
-listener/network/SocketEventSender.java
- listener.network.SocketEventSender
-util/Logger.java
- util.Logger
-listener/sidebar/SidebarListener.java
- listener.sidebar.SidebarListener
-MainApp.java
- MainApp
-listener/EventSender.java
- listener.EventSender
+listener/auth/registration/RegistrationFormListener1.java
+ listener.auth.registration.RegistrationFormListener1
 ui/sidebar/Sidebar.java
  ui.sidebar.Sidebar
+ui/newTweet/NewTweet.java
+ ui.newTweet.NewTweet
 ui/opening/OpeningPageFXMLController.java
  ui.opening.OpeningPageFXMLController
 ui/auth/registration/RegistrationPage1.java
@@ -30,12 +22,18 @@ listener/Listener.java
  listener.Listener
 ui/Component.java
  ui.Component
+ui/sidebar/SidebarFXMLController.java
+ ui.sidebar.SidebarFXMLController
 ui/auth/SignInPage.java
  ui.auth.SignInPage
 ui/auth/SignUpPageFXMLController.java
  ui.auth.SignUpPageFXMLController
+listener/newTweet/NewTweetListener.java
+ listener.newTweet.NewTweetListener
 ui/auth/signIn/SignInCenterFXMLController.java
  ui.auth.signIn.SignInCenterFXMLController
+listener/sidebar/SidebarListener.java
+ listener.sidebar.SidebarListener
 ui/settings/SettingsFXMLController.java
  ui.settings.SettingsFXMLController
 listener/auth/signIn/SignInFormListener.java
@@ -52,6 +50,10 @@ ui/settings/Settings.java
  ui.settings.Settings
 ui/Page.java
  ui.Page
+listener/EventSender.java
+ listener.EventSender
+ui/newTweet/NewTweetFXMLController.java
+ ui.newTweet.NewTweetFXMLController
 ui/auth/registration/RegistrationPage2FXMLController.java
  ui.auth.registration.RegistrationPage2FXMLController
 ui/auth/registration/RegistrationPage1FXMLController.java
@@ -66,17 +68,21 @@ ui/opening/OpeningPage.java
  ui.opening.OpeningPage
 ui/auth/signIn/SignInCenter.java
  ui.auth.signIn.SignInCenter
-LogicalAgent.java
- LogicalAgent
+listener/EventListener.java
+ listener.EventListener
+listener/opening/OpeningListener.java
+ listener.opening.OpeningListener
 ui/component/backButton/BackButtonFXMLController.java
  ui.component.backButton.BackButtonFXMLController
+listener/network/SocketEventSender.java
+ listener.network.SocketEventSender
 ui/component/backButton/BackButton.java
  ui.component.backButton.BackButton
 ui/auth/SignInPageFXMLController.java
  ui.auth.SignInPageFXMLController
-listener/auth/registration/RegistrationFormListener1.java
- listener.auth.registration.RegistrationFormListener1
-listener/opening/OpeningListener.java
- listener.opening.OpeningListener
-ui/sidebar/SidebarFXMLController.java
- ui.sidebar.SidebarFXMLController
+util/Logger.java
+ util.Logger
+LogicalAgent.java
+ LogicalAgent
+MainApp.java
+ MainApp

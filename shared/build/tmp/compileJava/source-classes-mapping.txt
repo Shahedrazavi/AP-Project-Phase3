@@ -39,16 +39,20 @@ response/ResponseVisitor.java
  response.ResponseVisitor
 event/newTweet/NewTweetEvent.java
  event.newTweet.NewTweetEvent
-event/component/tweetComponent/TweetEvent.java
- event.component.tweetComponent.TweetEvent
 event/settings/ComboBoxEvent.java
  event.settings.ComboBoxEvent
+event/component/tweetComponent/TweetEvent.java
+ event.component.tweetComponent.TweetEvent
 response/auth/sidebar/LogOutResponse.java
  response.auth.sidebar.LogOutResponse
 response/newTweet/NewTweetResponse.java
  response.newTweet.NewTweetResponse
 event/auth/signIn/SignInFormEvent.java
  event.auth.signIn.SignInFormEvent
+response/EmptyResponse.java
+ response.EmptyResponse
+response/settings/ChangeActResponse.java
+ response.settings.ChangeActResponse
 event/StringEvent.java
  event.StringEvent
 response/Response.java
@@ -65,8 +69,12 @@ response/auth/signIn/SignInResponse.java
  response.auth.signIn.SignInResponse
 event/Event.java
  event.Event
+response/settings/DeleteAccResponse.java
+ response.settings.DeleteAccResponse
 event/EventVisitor.java
  event.EventVisitor
+response/settings/ChangePassResponse.java
+ response.settings.ChangePassResponse
 event/settings/ChangePassEvent.java
  event.settings.ChangePassEvent
 event/component/tweetViewer/TweetViewerEvent.java

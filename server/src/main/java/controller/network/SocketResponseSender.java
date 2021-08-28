@@ -31,8 +31,12 @@ public class SocketResponseSender implements ResponseSender {
 
     @Override
     public Event getEvent() {
-        String eventString = scanner.nextLine();
-        return gson.fromJson(eventString, Event.class);
+        try {
+            String eventString = scanner.nextLine();
+            return gson.fromJson(eventString, Event.class);
+        }catch (Throwable throwable){
+            return null;
+        }
     }
 
     @Override

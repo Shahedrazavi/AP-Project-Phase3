@@ -32,6 +32,7 @@ public class ComboBoxEvent extends Event {
 
     @Override
     public Response visit(EventVisitor eventVisitor) {
-        return null;
+        if (command.equals("changeAccountType")) return eventVisitor.changeAccType(this);
+        else return eventVisitor.changeLastSeen(this);
     }
 }

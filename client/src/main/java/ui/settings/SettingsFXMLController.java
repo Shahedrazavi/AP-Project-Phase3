@@ -14,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import listener.settings.ChangePassListener;
 import listener.settings.ComboBoxListener;
 import listener.settings.SettingsListener;
+import response.settings.ChangePassResponse;
 import ui.FXMLController;
 import ui.mainView.MainPage;
 
@@ -147,12 +148,16 @@ public class SettingsFXMLController extends FXMLController {
         changePassListener = new ChangePassListener(component.getGraphicalAgent());
     }
 
-    public void deleteAndExit(){
+    public void exit(){
         ((MainPage)component.getParent()).exit();
     }
 
     @Override
     public void update() {
         component.updateApp();
+    }
+
+    public void showLabel(ChangePassResponse changePassResponse) {
+        passErrorLabel.setVisible(!changePassResponse.isValid());
     }
 }

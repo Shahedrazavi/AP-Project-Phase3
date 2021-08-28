@@ -5,35 +5,38 @@ import event.settings.ChangePassEvent;
 import event.settings.ComboBoxEvent;
 import event.settings.SettingsStringEvent;
 import model.User;
-import ui.settings.SettingsFXMLController;
+import response.EmptyResponse;
+import response.Response;
+import response.settings.ChangeActResponse;
+import response.settings.ChangePassResponse;
+import response.settings.DeleteAccResponse;
 
 public class SettingsLogic {
 
-//    private AccountController accountController;
+    private AccountController accountController;
 
     public SettingsLogic() {
         accountController = new AccountController();
     }
 
-    public void checkForChangingPass(ChangePassEvent changePassEvent){
+    public Response checkForChangingPass(ChangePassEvent changePassEvent){
+        ChangePassResponse response = new ChangePassResponse();
         boolean isValid = accountController.isPassCorrect(changePassEvent.getUser(),changePassEvent.getCurrentPass());
-
-
-        /* These part need to be completely revised in phase3 */
-//        SettingsFXMLController settingsFXMLController = (SettingsFXMLController) changePassEvent.getSource();
-//        settingsFXMLController.getPassErrorLabel().setVisible(!isValid);
+        response.setValid(isValid);
 
         if (isValid){
-//            accountController.changePass(changePassEvent.getUser(), changePassEvent.getNewPass());
+            accountController.changePass(changePassEvent.getUser(), changePassEvent.getNewPass());
         }
+        return response;
     }
 
-    public void ChangeAccType(ComboBoxEvent event){
+    public Response changeAccType(ComboBoxEvent event){
         boolean isPublic = event.getSelectedOption().equals(Config.getConfig("settings").getProperty("public"));
-//        accountController.ChangeAccType(event.getUser(),isPublic);
+        accountController.ChangeAccType(event.getUser(),isPublic);
+        return new EmptyResponse();
     }
 
-    public void ChangeLastSeenType(ComboBoxEvent event){
+    public Response changeLastSeenType(ComboBoxEvent event){
         User.LastSeenType lastSeenType = User.LastSeenType.everyone;
         if (event.getSelectedOption().equals(Config.getConfig("settings").getProperty("follow"))){
             lastSeenType = User.LastSeenType.followings;
@@ -41,20 +44,21 @@ public class SettingsLogic {
         if (event.getSelectedOption().equals(Config.getConfig("settings").getProperty("no_one"))){
             lastSeenType = User.LastSeenType.no_one;
         }
-//        accountController.ChangeLastSeenType(event.getUser(), lastSeenType);
+        accountController.ChangeLastSeenType(event.getUser(), lastSeenType);
+        return new EmptyResponse();
     }
 
-    public void changeActivate(SettingsStringEvent event){
-//        accountController.changeActivate(event.getUser());
+    public Response changeActivate(SettingsStringEvent event){
+        accountController.changeActivate(event.getUser());
 //        SettingsFXMLController settingsFXMLController = (SettingsFXMLController) event.getSource();
 //        settingsFXMLController.update();
         //
+        return new ChangeActResponse();
     }
 
-    public void deleteAcc(SettingsStringEvent event){
-//        accountController.deleteAcc(event.getUser());
-//        SettingsFXMLController settingsFXMLController = (SettingsFXMLController) event.getSource();
-//        settingsFXMLController.deleteAndExit();
-        //
+    public Response deleteAcc(SettingsStringEvent event){
+
+        accountController.deleteAcc(event.getUser());
+        return new DeleteAccResponse();
     }
 }

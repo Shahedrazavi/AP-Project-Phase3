@@ -1,38 +1,42 @@
 db/Context.java
  db.Context
-controller/auth/AuthController.java
- controller.auth.AuthController
-controller/newTweet/NewTweetLogic.java
- controller.newTweet.NewTweetLogic
-controller/auth/registration/RegistrationPage1Logic.java
- controller.auth.registration.RegistrationPage1Logic
-controller/network/SocketResponseSender.java
- controller.network.SocketResponseSender
+util/Logger.java
+ util.Logger
+db/TweetDB.java
+ db.TweetDB
+config/Config.java
+ config.Config
+Main.java
+ Main
 controller/Controller.java
  controller.Controller
 db/DBSet.java
  db.DBSet
 db/UserDB.java
  db.UserDB
-controller/SocketManager.java
- controller.SocketManager
+controller/auth/signIn/SignInController.java
+ controller.auth.signIn.SignInController
+controller/settings/AccountController.java
+ controller.settings.AccountController
 controller/auth/registration/RegistrationPage2Logic.java
  controller.auth.registration.RegistrationPage2Logic
 controller/newTweet/NewTweetController.java
  controller.newTweet.NewTweetController
+controller/auth/AuthController.java
+ controller.auth.AuthController
 controller/ClientHandler.java
  controller.ClientHandler
-Main.java
- Main
-config/Config.java
- config.Config
+controller/newTweet/NewTweetLogic.java
+ controller.newTweet.NewTweetLogic
+controller/settings/SettingsLogic.java
+ controller.settings.SettingsLogic
 controller/ResponseSender.java
  controller.ResponseSender
-db/TweetDB.java
- db.TweetDB
+controller/auth/registration/RegistrationPage1Logic.java
+ controller.auth.registration.RegistrationPage1Logic
 controller/auth/signIn/SignInPageLogic.java
  controller.auth.signIn.SignInPageLogic
-util/Logger.java
- util.Logger
-controller/auth/signIn/SignInController.java
- controller.auth.signIn.SignInController
+controller/network/SocketResponseSender.java
+ controller.network.SocketResponseSender
+controller/SocketManager.java
+ controller.SocketManager

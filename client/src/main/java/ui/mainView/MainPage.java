@@ -1,5 +1,6 @@
 package ui.mainView;
 
+import event.sidebar.SidebarEvent;
 import model.User;
 import ui.Component;
 import ui.GraphicalAgent;
@@ -86,8 +87,7 @@ public class MainPage extends Page {
     }
 
     public void exit(){
-        graphicalAgent.goToOpeningPage();
-        Logger.getLogger().logOut(loggedInUser.getUsername(),loggedInUser.getId().toString());
+        graphicalAgent.getListener().listen(new SidebarEvent(this,"logout",loggedInUser));
     }
 
     public void goBack(){

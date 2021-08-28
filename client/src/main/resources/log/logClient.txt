@@ -1,0 +1,3 @@
+2021-08-29T04:00:21.797664600: FATAL level: server is down.
+2021-08-29T04:01:00.673757100: NOTICE level: Application Started.
+2021-08-29T04:01:15.282876800: NOTICE level: Application exited.

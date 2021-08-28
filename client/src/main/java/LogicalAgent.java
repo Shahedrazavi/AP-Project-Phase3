@@ -9,6 +9,7 @@ import response.auth.registration.RegPage1Response;
 import response.auth.registration.RegPage2Response;
 import response.auth.signIn.SignInResponse;
 import response.newTweet.NewTweetResponse;
+import response.settings.ChangePassResponse;
 import ui.GraphicalAgent;
 import ui.auth.SignInPage;
 import ui.auth.SignUpPage;
@@ -17,10 +18,12 @@ import ui.auth.registration.RegistrationPage2FXMLController;
 import ui.auth.signIn.SignInCenterFXMLController;
 import ui.newTweet.NewTweet;
 import ui.newTweet.NewTweetFXMLController;
+import ui.settings.SettingsFXMLController;
 import util.Logger;
 import util.Loop;
 
 import java.util.LinkedList;
+import java.util.Set;
 
 public class LogicalAgent implements ResponseVisitor {
     private final EventSender eventSender;
@@ -74,6 +77,11 @@ public class LogicalAgent implements ResponseVisitor {
     }
 
     @Override
+    public void getEmptyResponse() {
+
+    }
+
+    @Override
     public void finalizeRegPage1(RegPage1Response regPage1Response) {
         ((RegistrationPage1FXMLController)((SignUpPage)graphicalAgent.getPage()).getPage1().getFxmlController()).finalizePage(regPage1Response);
     }
@@ -98,5 +106,20 @@ public class LogicalAgent implements ResponseVisitor {
     @Override
     public void goBackFromNewTweet(NewTweetResponse newTweetResponse) {
         ((NewTweetFXMLController)graphicalAgent.getMainPage().getCenterComp().getFxmlController()).finalizeComp(newTweetResponse);
+    }
+
+    @Override
+    public void changePass(ChangePassResponse changePassResponse) {
+        ((SettingsFXMLController)graphicalAgent.getMainPage().getCenterComp().getFxmlController()).showLabel(changePassResponse);
+    }
+
+    @Override
+    public void activation() {
+        ((SettingsFXMLController)graphicalAgent.getMainPage().getCenterComp().getFxmlController()).exit();
+    }
+
+    @Override
+    public void deleteAcc() {
+        ((SettingsFXMLController)graphicalAgent.getMainPage().getCenterComp().getFxmlController()).exit();
     }
 }

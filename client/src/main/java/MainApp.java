@@ -17,6 +17,7 @@ public class MainApp extends Application {
             agent.start();
         }
         catch (IOException e){
+            Logger.getLogger().serverDown();
             System.exit(1);
             e.printStackTrace();
         }

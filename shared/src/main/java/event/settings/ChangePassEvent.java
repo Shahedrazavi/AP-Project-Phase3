@@ -32,6 +32,6 @@ public class ChangePassEvent extends Event {
 
     @Override
     public Response visit(EventVisitor eventVisitor) {
-        return null;
+        return eventVisitor.changePass(this);
     }
 }

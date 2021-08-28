@@ -1,7 +1,9 @@
 package event.settings;
 
+import event.EventVisitor;
 import event.StringEvent;
 import model.User;
+import response.Response;
 
 public class SettingsStringEvent extends StringEvent {
 
@@ -14,5 +16,11 @@ public class SettingsStringEvent extends StringEvent {
 
     public User getUser() {
         return user;
+    }
+
+    @Override
+    public Response visit(EventVisitor eventVisitor) {
+        if (getCommand().equals("delete")) return eventVisitor.deleteAcc(this);
+        else return eventVisitor.deactivateAcc(this);
     }
 }
