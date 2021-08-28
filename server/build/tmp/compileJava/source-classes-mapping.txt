@@ -1,34 +1,38 @@
 db/Context.java
  db.Context
-util/Logger.java
- util.Logger
-config/Config.java
- config.Config
-Main.java
- Main
+controller/auth/AuthController.java
+ controller.auth.AuthController
+controller/newTweet/NewTweetLogic.java
+ controller.newTweet.NewTweetLogic
+controller/auth/registration/RegistrationPage1Logic.java
+ controller.auth.registration.RegistrationPage1Logic
+controller/network/SocketResponseSender.java
+ controller.network.SocketResponseSender
 controller/Controller.java
  controller.Controller
 db/DBSet.java
  db.DBSet
 db/UserDB.java
  db.UserDB
-db/TweetDB.java
- db.TweetDB
-controller/auth/AuthController.java
- controller.auth.AuthController
-controller/auth/registration/RegistrationPage2Logic.java
- controller.auth.registration.RegistrationPage2Logic
-controller/ResponseSender.java
- controller.ResponseSender
-controller/auth/registration/RegistrationPage1Logic.java
- controller.auth.registration.RegistrationPage1Logic
 controller/SocketManager.java
  controller.SocketManager
-controller/network/SocketResponseSender.java
- controller.network.SocketResponseSender
-controller/auth/signIn/SignInController.java
- controller.auth.signIn.SignInController
+controller/auth/registration/RegistrationPage2Logic.java
+ controller.auth.registration.RegistrationPage2Logic
+controller/newTweet/NewTweetController.java
+ controller.newTweet.NewTweetController
 controller/ClientHandler.java
  controller.ClientHandler
+Main.java
+ Main
+config/Config.java
+ config.Config
+controller/ResponseSender.java
+ controller.ResponseSender
+db/TweetDB.java
+ db.TweetDB
 controller/auth/signIn/SignInPageLogic.java
  controller.auth.signIn.SignInPageLogic
+util/Logger.java
+ util.Logger
+controller/auth/signIn/SignInController.java
+ controller.auth.signIn.SignInController

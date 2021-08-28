@@ -1,46 +1,52 @@
-gson/Constants.java
- gson.Constants
-model/PVChat.java
- model.PVChat
-gson/Deserializer.java
- gson.Deserializer
 model/Notif.java
  model.Notif
  model.Notif$NotifType
+model/Model.java
+ model.Model
+gson/Serializer.java
+ gson.Serializer
+gson/Deserializer.java
+ gson.Deserializer
 model/Image.java
  model.Image
 model/Tweet.java
  model.Tweet
 model/Message.java
  model.Message
-model/ID.java
- model.ID
-model/GroupChat.java
- model.GroupChat
-model/ChatLink.java
- model.ChatLink
-util/Loop.java
- util.Loop
 model/Chat.java
  model.Chat
  model.Chat$ChatType
+model/GroupChat.java
+ model.GroupChat
+gson/Constants.java
+ gson.Constants
+util/Loop.java
+ util.Loop
+model/PVChat.java
+ model.PVChat
+model/ChatLink.java
+ model.ChatLink
+model/ID.java
+ model.ID
 model/User.java
  model.User
  model.User$LastSeenType
-model/Model.java
- model.Model
-gson/Serializer.java
- gson.Serializer
+util/TimeTask.java
+ util.TimeTask
 event/opening/OpeningEvent.java
  event.opening.OpeningEvent
 response/ResponseVisitor.java
  response.ResponseVisitor
-event/component/tweetComponent/TweetEvent.java
- event.component.tweetComponent.TweetEvent
 event/newTweet/NewTweetEvent.java
  event.newTweet.NewTweetEvent
+event/component/tweetComponent/TweetEvent.java
+ event.component.tweetComponent.TweetEvent
 event/settings/ComboBoxEvent.java
  event.settings.ComboBoxEvent
+response/auth/sidebar/LogOutResponse.java
+ response.auth.sidebar.LogOutResponse
+response/newTweet/NewTweetResponse.java
+ response.newTweet.NewTweetResponse
 event/auth/signIn/SignInFormEvent.java
  event.auth.signIn.SignInFormEvent
 event/StringEvent.java
@@ -51,6 +57,8 @@ event/settings/SettingsStringEvent.java
  event.settings.SettingsStringEvent
 response/auth/registration/RegPage1Response.java
  response.auth.registration.RegPage1Response
+event/sidebar/SidebarEvent.java
+ event.sidebar.SidebarEvent
 response/auth/registration/RegPage2Response.java
  response.auth.registration.RegPage2Response
 response/auth/signIn/SignInResponse.java

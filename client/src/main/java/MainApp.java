@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
 import listener.network.SocketEventSender;
+import util.Logger;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -12,6 +13,7 @@ public class MainApp extends Application {
         try {
             Socket socket = new Socket("127.0.0.1", 5050);
             LogicalAgent agent = new LogicalAgent(new SocketEventSender(socket),stage);
+            Logger.getLogger().start();
             agent.start();
         }
         catch (IOException e){

@@ -27,9 +27,9 @@ public class Sidebar extends Component {
         ((SidebarFXMLController)fxmlController).hideOrUnhideButtons();
     }
 
-    public void exitToHomePage(){
-        ((MainPage)parent).exit();
-    }
+//    public void exitToHomePage(){
+//        ((MainPage)parent).exit();
+//    }
 
     public void goBack(){
         ((MainPage)parent).goBack();

@@ -73,4 +73,9 @@ public class GraphicalAgent {
     public Page getPage() {
         return page;
     }
+
+    public MainPage getMainPage() {
+        return mainPage;
+    }
+
 }

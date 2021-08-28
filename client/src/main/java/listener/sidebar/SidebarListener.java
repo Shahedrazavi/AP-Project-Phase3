@@ -1,11 +1,29 @@
 package listener.sidebar;
 
-import event.StringEvent;
+import event.sidebar.SidebarEvent;
+import listener.Listener;
+import ui.GraphicalAgent;
 import ui.sidebar.SidebarFXMLController;
 
-public class SidebarListener {
+public class SidebarListener extends Listener {
 
-    public void eventOccurred(StringEvent event) {
+    public SidebarListener(GraphicalAgent graphicalAgent) {
+        super(graphicalAgent);
+    }
+
+    public void eventOccurred(SidebarEvent event) {
+        if (event.getCommand().equals("back")){
+            ((SidebarFXMLController)event.getSource()).getComponent().goBack();
+        }
+        if (event.getCommand().equals("tweet")){
+            ((SidebarFXMLController)event.getSource()).getComponent().goToNewTweet();
+        }
+        if (event.getCommand().equals("settings")){
+            ((SidebarFXMLController)event.getSource()).getComponent().goToSettings();
+        }
+        if (event.getCommand().equals("profile")){
+            ((SidebarFXMLController)event.getSource()).getComponent().goToSelfProfile();
+        }
         if (event.getCommand().equals("timeline")){
 
         }
@@ -21,20 +39,8 @@ public class SidebarListener {
         if (event.getCommand().equals("messages")){
 
         }
-        if (event.getCommand().equals("profile")){
-            ((SidebarFXMLController)event.getSource()).getComponent().goToSelfProfile();
-        }
-        if (event.getCommand().equals("settings")){
-            ((SidebarFXMLController)event.getSource()).getComponent().goToSettings();
-        }
-        if (event.getCommand().equals("logout")){
-            ((SidebarFXMLController)event.getSource()).getComponent().exitToHomePage();
-        }
-        if (event.getCommand().equals("tweet")){
-            ((SidebarFXMLController)event.getSource()).getComponent().goToNewTweet();
-        }
-        if (event.getCommand().equals("back")){
-            ((SidebarFXMLController)event.getSource()).getComponent().goBack();
+        else {
+            graphicalAgent.getListener().listen(event);
         }
     }
 }

@@ -1,4 +1,5 @@
 import event.Event;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 import listener.EventSender;
 import listener.network.SocketEventSender;
@@ -7,12 +8,16 @@ import response.ResponseVisitor;
 import response.auth.registration.RegPage1Response;
 import response.auth.registration.RegPage2Response;
 import response.auth.signIn.SignInResponse;
+import response.newTweet.NewTweetResponse;
 import ui.GraphicalAgent;
 import ui.auth.SignInPage;
 import ui.auth.SignUpPage;
 import ui.auth.registration.RegistrationPage1FXMLController;
 import ui.auth.registration.RegistrationPage2FXMLController;
 import ui.auth.signIn.SignInCenterFXMLController;
+import ui.newTweet.NewTweet;
+import ui.newTweet.NewTweetFXMLController;
+import util.Logger;
 import util.Loop;
 
 import java.util.LinkedList;
@@ -81,5 +86,17 @@ public class LogicalAgent implements ResponseVisitor {
     @Override
     public void finalizeSignIn(SignInResponse signInResponse) {
         ((SignInCenterFXMLController)((SignInPage)graphicalAgent.getPage()).getSignInCenter().getFxmlController()).finalizeComp(signInResponse);
+    }
+
+    @Override
+    public void logOut() {
+        Platform.exit();
+        Logger.getLogger().exit();
+        System.exit(0);
+    }
+
+    @Override
+    public void goBackFromNewTweet(NewTweetResponse newTweetResponse) {
+        ((NewTweetFXMLController)graphicalAgent.getMainPage().getCenterComp().getFxmlController()).finalizeComp(newTweetResponse);
     }
 }

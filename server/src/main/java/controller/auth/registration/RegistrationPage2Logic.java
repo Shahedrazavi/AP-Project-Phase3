@@ -4,6 +4,7 @@ import controller.auth.AuthController;
 import event.auth.registration.RegistrationFormEvent;
 import response.Response;
 import response.auth.registration.RegPage2Response;
+import util.Logger;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;

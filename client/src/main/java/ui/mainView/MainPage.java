@@ -4,15 +4,17 @@ import model.User;
 import ui.Component;
 import ui.GraphicalAgent;
 import ui.Page;
-//import ui.newTweet.NewTweet;
 //import ui.profile.Profile;
+import ui.newTweet.NewTweet;
 import ui.settings.Settings;
 import ui.sidebar.Sidebar;
 import util.Logger;
+import util.Loop;
 
 import java.util.Stack;
 
 public class MainPage extends Page {
+    protected Loop updateLoop;
 
     private Stack<Component> componentHistory;
 
@@ -79,7 +81,7 @@ public class MainPage extends Page {
     }
 
     public void goToNewTweetPage(){
-//        centerComp = new NewTweet("newTweet",this, loggedInUser);
+        centerComp = new NewTweet("newTweet",graphicalAgent,this, loggedInUser);
         addNewCenterComp();
     }
 
