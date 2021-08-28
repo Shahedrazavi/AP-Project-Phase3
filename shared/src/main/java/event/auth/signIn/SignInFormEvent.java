@@ -1,6 +1,8 @@
 package event.auth.signIn;
 
 import event.Event;
+import event.EventVisitor;
+import response.Response;
 
 public class SignInFormEvent extends Event {
 
@@ -25,5 +27,10 @@ public class SignInFormEvent extends Event {
 
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public Response visit(EventVisitor eventVisitor) {
+        return eventVisitor.signInCheck(this);
     }
 }

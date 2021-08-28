@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.sidebar.SidebarFXMLController">
+   <children>
+      <Button fx:id="timelineButton" layoutX="50.0" layoutY="50.0" mnemonicParsing="false" onAction="#homePressed" prefHeight="40.0" prefWidth="100.0" text="Home" />
+      <Button fx:id="exploreButton" layoutX="50.0" layoutY="110.0" mnemonicParsing="false" onAction="#explorePressed" prefHeight="40.0" prefWidth="100.0" text="Explore" />
+      <Button fx:id="notifsButton" layoutX="50.0" layoutY="170.0" mnemonicParsing="false" onAction="#notifsPressed" prefHeight="40.0" prefWidth="100.0" text="Notifications" />
+      <Button fx:id="searchButton" layoutX="50.0" layoutY="230.0" mnemonicParsing="false" onAction="#searchPressed" prefHeight="40.0" prefWidth="100.0" text="Search" />
+      <Button fx:id="messagesButton" layoutX="50.0" layoutY="290.0" mnemonicParsing="false" onAction="#messagesPressed" prefHeight="40.0" prefWidth="100.0" text="Messages" />
+      <Button fx:id="profileButton" layoutX="50.0" layoutY="410.0" mnemonicParsing="false" onAction="#profilePressed" prefHeight="40.0" prefWidth="100.0" text="Profile" />
+      <Button fx:id="settingsButton" layoutX="50.0" layoutY="350.0" mnemonicParsing="false" onAction="#settingsPressed" prefHeight="40.0" prefWidth="100.0" text="Settings" />
+      <Button fx:id="logoutButton" layoutX="50.0" layoutY="470.0" mnemonicParsing="false" onAction="#logoutPressed" prefHeight="40.0" prefWidth="100.0" text="Log out / Exit" />
+      <Button fx:id="tweetButton" layoutX="50.0" layoutY="610.0" mnemonicParsing="false" onAction="#tweetPressed" prefHeight="50.0" prefWidth="100.0" text="Tweet" />
+      <Button fx:id="backButton" layoutY="1.0" mnemonicParsing="false" onAction="#backPressed" text="Back" />
+   </children>
+</AnchorPane>

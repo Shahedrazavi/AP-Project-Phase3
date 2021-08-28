@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.component.profileHeader.ProfileHeaderFXMLController">
+   <children>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="60.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="59.0" layoutY="25.0" text="Following" />
+      <Button layoutX="682.0" layoutY="62.0" mnemonicParsing="false" text="Edit Profile" />
+      <Label layoutX="71.0" layoutY="164.0" prefHeight="107.0" prefWidth="652.0" text="Bio:" />
+      <Label layoutX="145.0" layoutY="54.0" text="ProfileName:" />
+      <Label layoutX="145.0" layoutY="78.0" text="\@Username" />
+      <Button layoutX="594.0" layoutY="30.0" mnemonicParsing="false" text="Message" />
+      <Button layoutX="594.0" layoutY="59.0" mnemonicParsing="false" text="   Mute   " />
+      <Button layoutX="594.0" layoutY="88.0" mnemonicParsing="false" text="   Block   " />
+      <Label layoutX="71.0" layoutY="320.0" text="Birthday:" />
+   </children>
+</AnchorPane>

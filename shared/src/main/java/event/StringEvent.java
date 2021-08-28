@@ -1,5 +1,7 @@
 package event;
 
+import response.Response;
+
 public class StringEvent extends Event {
     private String command;
 
@@ -10,5 +12,10 @@ public class StringEvent extends Event {
 
     public String getCommand() {
         return command;
+    }
+
+    @Override
+    public Response visit(EventVisitor eventVisitor) {
+        return null;
     }
 }

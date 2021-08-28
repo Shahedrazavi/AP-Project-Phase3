@@ -1,58 +1,68 @@
+gson/Constants.java
+ gson.Constants
 model/PVChat.java
  model.PVChat
-model/ChatLink.java
- model.ChatLink
-model/Message.java
- model.Message
-model/User.java
- model.User
- model.User$LastSeenType
+gson/Deserializer.java
+ gson.Deserializer
+model/Notif.java
+ model.Notif
+ model.Notif$NotifType
 model/Image.java
  model.Image
 model/Tweet.java
  model.Tweet
-model/Model.java
- model.Model
-model/Notif.java
- model.Notif
- model.Notif$NotifType
+model/Message.java
+ model.Message
+model/ID.java
+ model.ID
+model/GroupChat.java
+ model.GroupChat
+model/ChatLink.java
+ model.ChatLink
+util/Loop.java
+ util.Loop
 model/Chat.java
  model.Chat
  model.Chat$ChatType
-model/GroupChat.java
- model.GroupChat
-model/ID.java
- model.ID
-gson/Deserializer.java
- gson.Deserializer
-gson/Constants.java
- gson.Constants
+model/User.java
+ model.User
+ model.User$LastSeenType
+model/Model.java
+ model.Model
 gson/Serializer.java
  gson.Serializer
-config/Config.java
- config.Config
-event/EventVisitor.java
- event.EventVisitor
-event/Event.java
- event.Event
+event/opening/OpeningEvent.java
+ event.opening.OpeningEvent
+response/ResponseVisitor.java
+ response.ResponseVisitor
 event/component/tweetComponent/TweetEvent.java
  event.component.tweetComponent.TweetEvent
 event/newTweet/NewTweetEvent.java
  event.newTweet.NewTweetEvent
 event/settings/ComboBoxEvent.java
  event.settings.ComboBoxEvent
-event/auth/FormEvent.java
- event.auth.FormEvent
 event/auth/signIn/SignInFormEvent.java
  event.auth.signIn.SignInFormEvent
 event/StringEvent.java
  event.StringEvent
+response/Response.java
+ response.Response
+event/settings/SettingsStringEvent.java
+ event.settings.SettingsStringEvent
+response/auth/registration/RegPage1Response.java
+ response.auth.registration.RegPage1Response
+response/auth/registration/RegPage2Response.java
+ response.auth.registration.RegPage2Response
+response/auth/signIn/SignInResponse.java
+ response.auth.signIn.SignInResponse
+event/Event.java
+ event.Event
+event/EventVisitor.java
+ event.EventVisitor
 event/settings/ChangePassEvent.java
  event.settings.ChangePassEvent
 event/component/tweetViewer/TweetViewerEvent.java
  event.component.tweetViewer.TweetViewerEvent
-event/settings/SettingsStringEvent.java
- event.settings.SettingsStringEvent
 event/auth/registration/RegistrationFormEvent.java
  event.auth.registration.RegistrationFormEvent
  event.auth.registration.RegistrationFormEvent$RegFormEventLevel

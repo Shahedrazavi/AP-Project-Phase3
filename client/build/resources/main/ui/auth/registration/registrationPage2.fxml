@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.auth.registration.RegistrationPage2FXMLController">
+   <children>
+      <Label fx:id="enterInformationLabel" layoutX="383.0" layoutY="100.0" text="Please enter you information:" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="phoneNumberBox" layoutX="250.0" layoutY="170.0" prefHeight="30.0" prefWidth="200.0" promptText="Phone Number" />
+      <TextField fx:id="bdYearBox" layoutX="250.0" layoutY="250.0" prefHeight="30.0" prefWidth="200.0" promptText="Year of Birthday" />
+      <TextField fx:id="bdMonthBox" layoutX="250.0" layoutY="330.0" prefHeight="30.0" prefWidth="200.0" promptText="Month of Birthday" />
+      <TextField fx:id="bdDayBox" layoutX="250.0" layoutY="410.0" prefHeight="30.0" prefWidth="200.0" promptText="Day of Birthday" />
+      <TextField fx:id="profileNameBox" layoutX="250.0" layoutY="490.0" prefHeight="30.0" prefWidth="200.0" promptText="Profile Name" />
+      <Button fx:id="createButton" layoutX="451.0" layoutY="660.0" mnemonicParsing="false" onAction="#createPressed" text="Create Account" />
+      <Label fx:id="setLaterLabel" layoutX="437.0" layoutY="127.0" text="(You can set these later)" />
+      <Label fx:id="willBeUsernameLabel" layoutX="548.0" layoutY="496.0" text="(If you don't set, it will be the username)" />
+      <Label fx:id="birthdayError" layoutX="548.0" layoutY="257.0" text="Please enter a valid birthday" textFill="RED" />
+   </children>
+</AnchorPane>

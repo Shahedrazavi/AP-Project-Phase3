@@ -1,8 +1,10 @@
 package event;
 
+import response.Response;
+
 import java.util.EventObject;
 
-public class Event extends EventObject {
+public abstract class Event extends EventObject {
     /**
      * Constructs a prototypical Event.
      *
@@ -16,5 +18,7 @@ public class Event extends EventObject {
     public void setSource(Object source){
         this.source = source;
     }
+
+    public abstract Response visit(EventVisitor eventVisitor);
 
 }

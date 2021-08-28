@@ -1,7 +1,9 @@
 package event.settings;
 
 import event.Event;
+import event.EventVisitor;
 import model.User;
+import response.Response;
 
 public class ChangePassEvent extends Event {
 
@@ -26,5 +28,10 @@ public class ChangePassEvent extends Event {
 
     public String getNewPass() {
         return newPass;
+    }
+
+    @Override
+    public Response visit(EventVisitor eventVisitor) {
+        return null;
     }
 }

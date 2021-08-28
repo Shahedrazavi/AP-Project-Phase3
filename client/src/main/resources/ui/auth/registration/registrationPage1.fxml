@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.auth.registration.RegistrationPage1FXMLController">
+   <children>
+      <Label fx:id="enterInformationLabel" layoutX="388.0" layoutY="100.0" text="Please enter you information:" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="firstNameBox" layoutX="250.0" layoutY="170.0" prefHeight="30.0" prefWidth="200.0" promptText="First Name" />
+      <TextField fx:id="lastNameBox" layoutX="250.0" layoutY="250.0" prefHeight="30.0" prefWidth="200.0" promptText="Last Name" />
+      <TextField fx:id="emailBox" layoutX="250.0" layoutY="330.0" prefHeight="30.0" prefWidth="200.0" promptText="Email" />
+      <TextField fx:id="usernameBox" layoutX="250.0" layoutY="410.0" prefHeight="30.0" prefWidth="200.0" promptText="Desired Username" />
+      <TextField fx:id="passwordBox" layoutX="250.0" layoutY="490.0" prefHeight="30.0" prefWidth="200.0" promptText="Password" />
+      <TextField fx:id="passwordConfirmationBox" layoutX="250.0" layoutY="570.0" prefHeight="30.0" prefWidth="200.0" promptText="Password" />
+      <Label fx:id="emailError" layoutX="534.0" layoutY="336.0" text="There is already an account with this email" textFill="RED" />
+      <Label fx:id="usernameError" layoutX="534.0" layoutY="416.0" text="There is already an account with this username" textFill="RED" />
+      <Label fx:id="passwordError" layoutX="534.0" layoutY="576.0" text="Passwords do not match" textFill="RED" />
+      <Label fx:id="firstNameEmpty" layoutX="534.0" layoutY="176.0" text="Cannot be empty" textFill="RED" />
+      <Label fx:id="lastNameEmpty" layoutX="534.0" layoutY="256.0" text="Cannot be empty" textFill="RED" />
+      <Label fx:id="emailEmpty" layoutX="534.0" layoutY="336.0" text="Cannot be empty" textFill="RED" />
+      <Label fx:id="usernameEmpty" layoutX="534.0" layoutY="416.0" text="Cannot be empty" textFill="RED" />
+      <Label fx:id="passwordEmpty" layoutX="534.0" layoutY="496.0" text="Cannot be empty" textFill="RED" />
+      <Label fx:id="password2Empty" layoutX="534.0" layoutY="576.0" text="Cannot be empty" textFill="RED" />
+      <Button fx:id="proceedButton" layoutX="475.0" layoutY="645.0" mnemonicParsing="false" onAction="#proceedPressed" text="Proceed" />
+   </children>
+</AnchorPane>

@@ -1,6 +1,8 @@
 package event.auth.registration;
 
 import event.Event;
+import event.EventVisitor;
+import response.Response;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -29,13 +31,6 @@ public class RegistrationFormEvent extends Event {
         LAST
     }
 
-
-    /**
-     * Constructs a prototypical Event.
-     *
-     * @param source the object on which the Event initially occurred
-     * @throws IllegalArgumentException if source is null
-     */
     public RegistrationFormEvent(Object source, String firstName , String lastName , String email , String username , String password1 , String password2) {
         super(source);
         this.firstName = firstName;
@@ -133,4 +128,9 @@ public class RegistrationFormEvent extends Event {
     }
 
 
+    @Override
+    public Response visit(EventVisitor eventVisitor) {
+        if (level == RegFormEventLevel.FIRST) return eventVisitor.regInfoCheck1(this);
+        else return eventVisitor.regInfoCheck2(this);
+    }
 }

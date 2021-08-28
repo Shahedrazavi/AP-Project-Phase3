@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.auth.SignUpPageFXMLController">
+   <children>
+      <Line endX="1000.0" layoutY="78.0" strokeWidth="3.0" AnchorPane.leftAnchor="-1.5" AnchorPane.rightAnchor="-1.5" />
+      <AnchorPane fx:id="registrationSection" layoutY="80.0" prefHeight="720.0" prefWidth="1000.0" />
+      <AnchorPane fx:id="backButton" layoutX="14.0" layoutY="14.0" prefHeight="64.0" prefWidth="64.0" />
+   </children>
+</AnchorPane>

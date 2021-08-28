@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.profile.ProfileFXMLController">
+   <children>
+      <Label fx:id="privateAccountLabel" layoutX="195.0" layoutY="550.0" text="You should follow this account to see tweets">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="profileSection" prefHeight="400.0" prefWidth="800.0" />
+      <AnchorPane fx:id="tweetSection" layoutY="400.0" prefHeight="400.0" prefWidth="800.0" />
+   </children>
+</AnchorPane>
