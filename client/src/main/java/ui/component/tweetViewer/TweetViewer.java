@@ -1,9 +1,9 @@
 package ui.component.tweetViewer;
 
-import controller.component.tweetViewer.TweetViewerLogic;
 import model.Tweet;
 import model.User;
 import ui.Component;
+import ui.GraphicalAgent;
 import ui.component.tweetComponent.TweetComponent;
 import ui.mainView.MainPage;
 
@@ -16,12 +16,11 @@ public class TweetViewer extends Component {
 
     private MainPage mainPage;
 
-    public TweetViewer(String fxmlName, TVContainerComponent parent, LinkedList<Tweet> tweets , User loggedInUser , MainPage mainPage) {
-        super(fxmlName);
+    public TweetViewer(String fxmlName, GraphicalAgent graphicalAgent, TVContainerComponent parent, User loggedInUser , MainPage mainPage) {
+        super(fxmlName,graphicalAgent);
         setParent(parent);
         setLoggedInUser(loggedInUser);
         this.index = 0;
-        this.tweets = tweets;
         this.loggedInUser = loggedInUser;
         this.mainPage = mainPage;
         initialize();
@@ -31,7 +30,6 @@ public class TweetViewer extends Component {
     public void initialize() {
         TweetViewerFXMLController controller = (TweetViewerFXMLController) fxmlController;
         controller.setComponent(this);
-        controller.initializeLogic(new TweetViewerLogic());
         controller.initializeListener();
         fillComponent(controller);
     }
@@ -78,5 +76,9 @@ public class TweetViewer extends Component {
 
     public void goToProfile(User user){
         mainPage.goToProfile(user);
+    }
+
+    public LinkedList<Tweet> getTweets() {
+        return tweets;
     }
 }

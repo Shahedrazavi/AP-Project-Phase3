@@ -2,6 +2,7 @@ package event;
 
 import event.auth.registration.RegistrationFormEvent;
 import event.auth.signIn.SignInFormEvent;
+import event.component.tweetComponent.TweetEvent;
 import event.newTweet.NewTweetEvent;
 import event.opening.OpeningEvent;
 import event.settings.ChangePassEvent;
@@ -25,16 +26,23 @@ public interface EventVisitor {
 
 
     //Tweet Component//
-    Response likeTweet();
-    Response showComments();
-    Response forwardTweet();
-    Response reportTweet();
-    Response retweetTweet();
-    Response savePressed();
+    Response likeTweet(TweetEvent event);
+    Response showComments(TweetEvent event);
+    Response reportTweet(TweetEvent event);
+    Response retweetTweet(TweetEvent event);
+    Response savePressed(TweetEvent event);
 
     //Users//
-    Response blockAcc();
-    Response muteAcc();
-    Response viewProfile();
+    Response blockAcc(AccountEvent event);
+    Response muteAcc(AccountEvent event);
+    Response viewProfile(AccountEvent event);
+
+
+    //Tweets List//
+    Response getTweetsList(GetTweetsEvent event);
+
+
+
+//    Response showSendingList();
 
 }

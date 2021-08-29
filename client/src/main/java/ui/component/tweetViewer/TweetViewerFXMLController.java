@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 //import listener.component.tweetViewer.TweetViewerListener;
+import listener.component.tweetViewer.TweetViewerListener;
 import ui.FXMLController;
 import ui.component.tweetComponent.TweetComponent;
 
@@ -18,7 +19,7 @@ public class TweetViewerFXMLController extends FXMLController{
 
 //    private TweetViewerLogic logic;
 
-//    private TweetViewerListener listener;
+    private TweetViewerListener listener;
 
     private TweetViewer component;
 
@@ -39,12 +40,10 @@ public class TweetViewerFXMLController extends FXMLController{
         emptyLabel.setVisible(false);
     }
 
-    public void initializeLogic(TweetViewerLogic logic){
-        this.logic = logic;
-    }
+
 
     public void initializeListener(){
-        listener = new TweetViewerListener(logic);
+        listener = new TweetViewerListener(component.getGraphicalAgent());
     }
 
     public void disableButtons(){

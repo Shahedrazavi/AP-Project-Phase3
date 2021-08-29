@@ -9,12 +9,6 @@ public class TweetViewerListener extends Listener {
     public TweetViewerListener(GraphicalAgent graphicalAgent) {
         super(graphicalAgent);
     }
-//    private TweetViewerLogic logic;
-
-//    public TweetViewerListener(TweetViewerLogic logic) {
-//        this.logic = logic;
-//    }
-
 
     public void EventOccurred(TweetViewerEvent event){
         if (event.getCommand().equals("nextPressed")){

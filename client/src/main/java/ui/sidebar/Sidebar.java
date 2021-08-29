@@ -36,7 +36,7 @@ public class Sidebar extends Component {
     }
 
     public void goToSelfProfile(){
-        ((MainPage)parent).goToSelfProfilePage();
+        ((MainPage)parent).goToProfilePage(loggedInUser);
     }
 
     public void goToSettings(){

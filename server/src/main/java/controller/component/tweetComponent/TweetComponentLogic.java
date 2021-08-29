@@ -3,7 +3,7 @@ package controller.component.tweetComponent;
 import model.ID;
 import model.Tweet;
 import model.User;
-import ui.component.tweetComponent.TweetComponent;
+import response.Response;
 
 public class TweetComponentLogic {
     private Tweet tweet;
@@ -12,10 +12,7 @@ public class TweetComponentLogic {
     private TweetController tweetController;
     private UserController userController;
 
-    private TweetComponent tweetComponent;
-
-    public TweetComponentLogic(TweetComponent tweetComponent,Tweet tweet) {
-        this.tweetComponent = tweetComponent;
+    public TweetComponentLogic(Tweet tweet, User loggedInUser) {
         this.tweet = tweet;
         this.loggedInUser = loggedInUser;
 
@@ -44,12 +41,24 @@ public class TweetComponentLogic {
         tweetController.unlike();
     }
 
+    public void checkReport(){
+        if (!isReported()){
+            report();
+        }
+    }
+
     public boolean isReported(){
         return tweet.getReports().contains(loggedInUser.getId());
     }
 
     public void report(){
         tweetController.report();
+    }
+
+    public void checkRetweet(){
+        if (!isRetweeted()){
+            retweet();
+        }
     }
 
     public boolean isRetweeted(){
@@ -60,44 +69,14 @@ public class TweetComponentLogic {
         tweetController.retweet();
     }
 
-    public boolean isMuted(){
-        return tweetController.isMuted();
-    }
-
-    public void mute(){
-        tweetController.mute();
-    }
-
-    public boolean isBlocked(){
-        return tweetController.isBlocked();
-    }
-
-    public void block() {
-        tweetController.block();
-    }
-
     public void save(){
         // coming soon //
     }
 
-    public void comment(){
+    public Response viewComments(){
+        return null;
     }
 
-    public void viewComments(){
-
-    }
-
-    public void forwardTo(){
-
-    }
-
-    public void viewProfile(){
-        tweetComponent.goToProfile(tweetController.getTweetUser());
-    }
-
-    public void viewTweetPhoto(){
-
-    }
 
     public String getUsername(ID id){
         return userController.getUsername(id);

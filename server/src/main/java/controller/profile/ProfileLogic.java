@@ -6,7 +6,7 @@ import model.User;
 import java.util.LinkedList;
 
 public class ProfileLogic{
-    private User loggedInUser;
+    private User tar;
 
     private ProfileController controller;
 

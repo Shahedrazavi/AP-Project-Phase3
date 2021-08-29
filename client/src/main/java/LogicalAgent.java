@@ -45,6 +45,7 @@ public class LogicalAgent implements ResponseVisitor {
 
     private void addEvent(Event event){
         synchronized (lock){
+            event.setToken(token);
             Response serverResponse = eventSender.send(event);
             if (serverResponse != null) serverResponse.visit(this);
 //            events.add(event);

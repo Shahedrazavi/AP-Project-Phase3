@@ -1,15 +1,19 @@
 package controller;
 
 import config.Config;
+import controller.account.AccountLogic;
 import controller.auth.registration.RegistrationPage1Logic;
 import controller.auth.registration.RegistrationPage2Logic;
 import controller.auth.signIn.SignInPageLogic;
+import controller.component.tweetComponent.TweetComponentLogic;
 import controller.newTweet.NewTweetLogic;
 import controller.settings.SettingsLogic;
+import event.AccountEvent;
 import event.Event;
 import event.EventVisitor;
 import event.auth.registration.RegistrationFormEvent;
 import event.auth.signIn.SignInFormEvent;
+import event.component.tweetComponent.TweetEvent;
 import event.newTweet.NewTweetEvent;
 import event.opening.OpeningEvent;
 import event.settings.ChangePassEvent;
@@ -141,47 +145,49 @@ public class ClientHandler extends Thread implements EventVisitor {
     }
 
     @Override
-    public Response likeTweet() {
-        return null;
+    public Response likeTweet(TweetEvent tweetEvent) {
+        new TweetComponentLogic(tweetEvent.getTweet(),tweetEvent.getLoggedInUser()).checkLike();
+        return new EmptyResponse();
     }
 
     @Override
-    public Response showComments() {
-        return null;
+    public Response showComments(TweetEvent tweetEvent) {
+        //Can be done
+        return new EmptyResponse();
     }
 
     @Override
-    public Response forwardTweet() {
-        return null;
+    public Response reportTweet(TweetEvent tweetEvent) {
+        new TweetComponentLogic(tweetEvent.getTweet(),tweetEvent.getLoggedInUser()).checkReport();
+        return new EmptyResponse();
     }
 
     @Override
-    public Response reportTweet() {
-        return null;
+    public Response retweetTweet(TweetEvent tweetEvent) {
+        new TweetComponentLogic(tweetEvent.getTweet(),tweetEvent.getLoggedInUser()).checkRetweet();
+        return new EmptyResponse();
     }
 
     @Override
-    public Response retweetTweet() {
-        return null;
+    public Response savePressed(TweetEvent tweetEvent) {
+        new TweetComponentLogic(tweetEvent.getTweet(),tweetEvent.getLoggedInUser());
+        return new EmptyResponse();
     }
 
     @Override
-    public Response savePressed() {
-        return null;
+    public Response blockAcc(AccountEvent accountEvent) {
+        new AccountLogic(accountEvent.getTargetTweet(), accountEvent.getLoggedInUser()).checkBlock();
+        return new EmptyResponse();
     }
 
     @Override
-    public Response blockAcc() {
-        return null;
+    public Response muteAcc(AccountEvent accountEvent) {
+        new AccountLogic(accountEvent.getTargetTweet(), accountEvent.getLoggedInUser()).checkMute();
+        return new EmptyResponse();
     }
 
     @Override
-    public Response muteAcc() {
-        return null;
-    }
-
-    @Override
-    public Response viewProfile() {
-        return null;
+    public Response viewProfile(AccountEvent accountEvent) {
+        return new AccountLogic(accountEvent.getTargetTweet(), accountEvent.getLoggedInUser()).goToProfile();
     }
 }

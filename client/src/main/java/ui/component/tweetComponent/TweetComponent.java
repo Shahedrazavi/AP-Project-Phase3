@@ -28,7 +28,7 @@ public class TweetComponent extends Component {
         TweetComponentFXMLController controller = (TweetComponentFXMLController) fxmlController;
         controller.setComponent(this);
 //        controller.initializeLogic(logic);
-        controller.initializeListener();
+        controller.setListener();
         controller.setTweetInfo();
         controller.configButtons();
     }
@@ -39,5 +39,10 @@ public class TweetComponent extends Component {
 
     public Tweet getTweet() {
         return tweet;
+    }
+
+    @Override
+    public User getLoggedInUser() {
+        return loggedInUser;
     }
 }

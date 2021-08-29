@@ -1,6 +1,7 @@
 package ui.component.tweetComponent;
 
-import controller.component.tweetComponent.TweetComponentLogic;
+
+import event.AccountEvent;
 import event.component.tweetComponent.TweetEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class TweetComponentFXMLController extends FXMLController{
 
-//    private TweetComponentListener listener;
+    private TweetComponentListener listener;
 
 //    private TweetComponentLogic logic;
 
@@ -91,76 +92,76 @@ public class TweetComponentFXMLController extends FXMLController{
     }
 
     public void configButtons(){
-        if (logic.isMuted()){
-            muteButton.setDisable(true);
-        }
-        if (logic.isBlocked()){
-            blockButton.setDisable(true);
-        }
-        if (logic.isReported()){
-            reportButton.setDisable(true);
-        }
-        if (logic.isRetweeted()){
-            retweetButton.setDisable(true);
-        }
+//        if (logic.isMuted()){
+//            muteButton.setDisable(true);
+//        }
+//        if (logic.isBlocked()){
+//            blockButton.setDisable(true);
+//        }
+//        if (logic.isReported()){
+//            reportButton.setDisable(true);
+//        }
+//        if (logic.isRetweeted()){
+//            retweetButton.setDisable(true);
+//        }
     }
 
 //    public void initializeLogic(TweetComponentLogic logic){
 //        this.logic = logic;
 //    }
 
-    public void initializeListener(){
-//        listener = new TweetComponentListener(logic);
+    public void setListener(){
+        listener = new TweetComponentListener(component.getGraphicalAgent());
     }
 
     @FXML
     void blockPressed(ActionEvent event) {
-        listener.eventOccurred(new TweetEvent(this,"blockPressed"));
+        listener.eventOccurred(new AccountEvent(this,"block",component.getLoggedInUser(), component.getTweet()));
     }
 
     @FXML
     void commentPressed(ActionEvent event) {
-        listener.eventOccurred(new TweetEvent(this,"commentPressed"));
+        listener.eventOccurred(new TweetEvent(this,"commentPressed", component.getLoggedInUser(), component.getTweet()));
     }
 
     @FXML
     void forwardPressed(ActionEvent event) {
-        listener.eventOccurred(new TweetEvent(this,"forwardPressed"));
+        listener.eventOccurred(new TweetEvent(this,"forwardPressed", component.getLoggedInUser(), component.getTweet()));
     }
 
     @FXML
     void likePressed(ActionEvent event) {
-        listener.eventOccurred(new TweetEvent(this,"likePressed"));
+        listener.eventOccurred(new TweetEvent(this,"likePressed", component.getLoggedInUser(), component.getTweet()));
     }
 
     @FXML
     void mutePressed(ActionEvent event) {
-        listener.eventOccurred(new TweetEvent(this,"mutePressed"));
+        listener.eventOccurred(new AccountEvent(this,"mute",component.getLoggedInUser(), component.getTweet()));
     }
 
     @FXML
     void reportPressed(ActionEvent event) {
-        listener.eventOccurred(new TweetEvent(this,"reportPressed"));
+        listener.eventOccurred(new TweetEvent(this,"reportPressed", component.getLoggedInUser(), component.getTweet()));
     }
 
     @FXML
     void retweetPressed(ActionEvent event) {
-        listener.eventOccurred(new TweetEvent(this,"retweetPressed"));
+        listener.eventOccurred(new TweetEvent(this,"retweetPressed", component.getLoggedInUser(), component.getTweet()));
     }
 
     @FXML
     void savePressed(ActionEvent event) {
-        listener.eventOccurred(new TweetEvent(this,"savePressed"));
+        listener.eventOccurred(new TweetEvent(this,"savePressed", component.getLoggedInUser(), component.getTweet()));
     }
 
     @FXML
     void viewCommentsPressed(ActionEvent event) {
-        listener.eventOccurred(new TweetEvent(this,"viewCommentsPressed"));
+        listener.eventOccurred(new TweetEvent(this,"viewCommentsPressed", component.getLoggedInUser(), component.getTweet()));
     }
 
     @FXML
     void viewProfilePressed(ActionEvent event) {
-        listener.eventOccurred(new TweetEvent(this,"viewProfilePressed"));
+        listener.eventOccurred(new AccountEvent(this,"viewProfile",component.getLoggedInUser(), component.getTweet()));
     }
 
 

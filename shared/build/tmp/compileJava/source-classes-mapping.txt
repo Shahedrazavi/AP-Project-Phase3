@@ -1,11 +1,21 @@
+gson/Serializer.java
+ gson.Serializer
+util/Loop.java
+ util.Loop
+model/ID.java
+ model.ID
+gson/Deserializer.java
+ gson.Deserializer
+gson/Constants.java
+ gson.Constants
+util/TimeTask.java
+ util.TimeTask
 event/opening/OpeningEvent.java
  event.opening.OpeningEvent
 response/ResponseVisitor.java
  response.ResponseVisitor
 event/newTweet/NewTweetEvent.java
  event.newTweet.NewTweetEvent
-gson/Deserializer.java
- gson.Deserializer
 response/auth/sidebar/LogOutResponse.java
  response.auth.sidebar.LogOutResponse
 response/newTweet/NewTweetResponse.java
@@ -18,16 +28,12 @@ event/auth/signIn/SignInFormEvent.java
  event.auth.signIn.SignInFormEvent
 response/EmptyResponse.java
  response.EmptyResponse
-util/TimeTask.java
- util.TimeTask
 response/Response.java
  response.Response
 model/GroupChat.java
  model.GroupChat
 response/auth/registration/RegPage1Response.java
  response.auth.registration.RegPage1Response
-util/Loop.java
- util.Loop
 response/auth/registration/RegPage2Response.java
  response.auth.registration.RegPage2Response
 model/ChatLink.java
@@ -46,12 +52,12 @@ response/ExitClientResponse.java
 event/auth/registration/RegistrationFormEvent.java
  event.auth.registration.RegistrationFormEvent
  event.auth.registration.RegistrationFormEvent$RegFormEventLevel
+event/update/UpdateProfileEvent.java
+ event.update.UpdateProfileEvent
 event/settings/ComboBoxEvent.java
  event.settings.ComboBoxEvent
 event/component/tweetComponent/TweetEvent.java
  event.component.tweetComponent.TweetEvent
-gson/Constants.java
- gson.Constants
 response/settings/ChangeActResponse.java
  response.settings.ChangeActResponse
 event/StringEvent.java
@@ -66,22 +72,20 @@ event/AccountEvent.java
 model/Chat.java
  model.Chat
  model.Chat$ChatType
-model/ID.java
- model.ID
 event/sidebar/SidebarEvent.java
  event.sidebar.SidebarEvent
 model/PVChat.java
  model.PVChat
 response/auth/signIn/SignInResponse.java
  response.auth.signIn.SignInResponse
+event/GetTweetsEvent.java
+ event.GetTweetsEvent
 model/Message.java
  model.Message
 response/settings/DeleteAccResponse.java
  response.settings.DeleteAccResponse
 event/EventVisitor.java
  event.EventVisitor
-gson/Serializer.java
- gson.Serializer
 response/settings/ChangePassResponse.java
  response.settings.ChangePassResponse
 event/settings/ChangePassEvent.java

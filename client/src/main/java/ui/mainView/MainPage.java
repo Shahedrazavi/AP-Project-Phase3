@@ -78,7 +78,7 @@ public class MainPage extends Page {
     }
 
     public void goToProfilePage(User user) {
-        centerComp = new Profile("sidebar",this, user);
+        centerComp = new Profile("sidebar",this,loggedInUser, user);
         addNewCenterComp();
     }
 

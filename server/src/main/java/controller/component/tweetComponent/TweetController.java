@@ -21,9 +21,9 @@ public class TweetController extends Controller {
     public void like(){
         tweet.addLike(loggedInUser.getId());
         for (Tweet tweet : context.tweets.getAll()){
-            if (tweet.getParentTweetID().equals(tweet.getId())){
-                tweet.addLike(loggedInUser.getId());
-            }
+            if (isTweetARetweet(tweet))
+                if (tweet.getParentTweetID().equals(tweet.getId()))
+                    tweet.addLike(loggedInUser.getId());
         }
 
         context.tweets.update(tweet);
@@ -32,9 +32,9 @@ public class TweetController extends Controller {
     public void unlike(){
         tweet.removeLike(loggedInUser.getId());
         for (Tweet tweet : context.tweets.getAll()){
-            if (tweet.getParentTweetID().equals(tweet.getId())){
-                tweet.removeLike(loggedInUser.getId());
-            }
+            if (isTweetARetweet(tweet))
+                if (tweet.getParentTweetID().equals(tweet.getId()))
+                    tweet.removeLike(loggedInUser.getId());
         }
         context.tweets.update(tweet);
     }
@@ -42,9 +42,9 @@ public class TweetController extends Controller {
     public void report(){
         tweet.addReport(loggedInUser.getId());
         for (Tweet tweet : context.tweets.getAll()){
-            if (tweet.getParentTweetID().equals(tweet.getId())){
-                tweet.addReport(loggedInUser.getId());
-            }
+            if (isTweetARetweet(tweet))
+                if (tweet.getParentTweetID().equals(tweet.getId()))
+                    tweet.addReport(loggedInUser.getId());
         }
         context.tweets.update(tweet);
     }
@@ -63,55 +63,7 @@ public class TweetController extends Controller {
         context.tweets.add(newRetweet);
     }
 
-    public boolean isMuted(){
-        ID mutedID = tweet.getWriterID();
-        if (isTweetARetweet(tweet)) {
-            mutedID = tweet.getRetweeterID();
-        }
 
-        User mutedUser = context.users.get(mutedID);
-        ID mutedUserID = mutedUser.getId();
-        return loggedInUser.getMutedUsers().contains(mutedUserID);
-    }
-
-    public void mute(){
-        ID mutedID = tweet.getWriterID();
-        if (isTweetARetweet(tweet)) {
-            mutedID = tweet.getRetweeterID();
-        }
-
-        User mutedUser = context.users.get(mutedID);
-        ID mutedUserID = mutedUser.getId();
-        loggedInUser.getMutedUsers().add(mutedUserID);
-        context.users.update(loggedInUser);
-    }
-
-    public boolean isBlocked(){
-        ID blockedID = tweet.getWriterID();
-        if (isTweetARetweet(tweet)){
-            blockedID = tweet.getRetweeterID();
-        }
-
-        User blockedUser = context.users.get(blockedID);
-        ID blockedUserID = blockedUser.getId();
-        return loggedInUser.getBlockedUsers().contains(blockedUserID);
-    }
-
-    public void block(){
-        ID blockedID = tweet.getWriterID();
-        if (isTweetARetweet(tweet)){
-            blockedID = tweet.getRetweeterID();
-        }
-
-        User blockedUser = context.users.get(blockedID);
-        ID blockedUserID = blockedUser.getId();
-        loggedInUser.getBlockedUsers().add(blockedUserID);
-        context.users.update(loggedInUser);
-    }
-
-    public User getTweetUser(){
-        return context.users.get(tweet.getWriterID());
-    }
 
     public Tweet getTweetByID(ID id){
         return context.tweets.get(id);
