@@ -11,6 +11,6 @@ public class ChangePassListener extends Listener {
     }
 
     public void eventOccurred(ChangePassEvent event){
-//        logic.checkForChangingPass(event);
+        graphicalAgent.getListener().listen(event);
     }
 }

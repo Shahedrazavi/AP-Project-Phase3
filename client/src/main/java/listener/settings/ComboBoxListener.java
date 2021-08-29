@@ -12,10 +12,10 @@ public class ComboBoxListener extends Listener {
 
     public void eventOccurred(ComboBoxEvent event){
         if (event.getCommand().equals("changeAccountType")){
-//            logic.ChangeAccType(event);
+            graphicalAgent.getListener().listen(event);
         }
         if (event.getCommand().equals("changeLastSeen")) {
-//            logic.ChangeLastSeenType(event);
+            graphicalAgent.getListener().listen(event);
         }
     }
 

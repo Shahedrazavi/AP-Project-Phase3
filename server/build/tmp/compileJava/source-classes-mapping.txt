@@ -1,42 +1,42 @@
 db/Context.java
  db.Context
-util/Logger.java
- util.Logger
-db/TweetDB.java
- db.TweetDB
-config/Config.java
- config.Config
-Main.java
- Main
+controller/auth/signIn/SignInController.java
+ controller.auth.signIn.SignInController
+controller/newTweet/NewTweetLogic.java
+ controller.newTweet.NewTweetLogic
+controller/auth/registration/RegistrationPage1Logic.java
+ controller.auth.registration.RegistrationPage1Logic
+controller/network/SocketResponseSender.java
+ controller.network.SocketResponseSender
 controller/Controller.java
  controller.Controller
 db/DBSet.java
  db.DBSet
+controller/ResponseSender.java
+ controller.ResponseSender
 db/UserDB.java
  db.UserDB
-controller/auth/signIn/SignInController.java
- controller.auth.signIn.SignInController
-controller/settings/AccountController.java
- controller.settings.AccountController
 controller/auth/registration/RegistrationPage2Logic.java
  controller.auth.registration.RegistrationPage2Logic
 controller/newTweet/NewTweetController.java
  controller.newTweet.NewTweetController
+config/Config.java
+ config.Config
+Main.java
+ Main
 controller/auth/AuthController.java
  controller.auth.AuthController
-controller/ClientHandler.java
- controller.ClientHandler
-controller/newTweet/NewTweetLogic.java
- controller.newTweet.NewTweetLogic
-controller/settings/SettingsLogic.java
- controller.settings.SettingsLogic
-controller/ResponseSender.java
- controller.ResponseSender
-controller/auth/registration/RegistrationPage1Logic.java
- controller.auth.registration.RegistrationPage1Logic
+controller/settings/AccountController.java
+ controller.settings.AccountController
+util/Logger.java
+ util.Logger
+db/TweetDB.java
+ db.TweetDB
 controller/auth/signIn/SignInPageLogic.java
  controller.auth.signIn.SignInPageLogic
-controller/network/SocketResponseSender.java
- controller.network.SocketResponseSender
+controller/ClientHandler.java
+ controller.ClientHandler
+controller/settings/SettingsLogic.java
+ controller.settings.SettingsLogic
 controller/SocketManager.java
  controller.SocketManager

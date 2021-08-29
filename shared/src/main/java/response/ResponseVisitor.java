@@ -16,4 +16,6 @@ public interface ResponseVisitor {
     void changePass(ChangePassResponse changePassResponse);
     void activation();
     void deleteAcc();
+    void exitClient();
+    void startClient();
 }

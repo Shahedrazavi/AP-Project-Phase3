@@ -2,6 +2,7 @@ package ui;
 
 import config.Config;
 import javafx.stage.Stage;
+import util.Logger;
 //import util.Logger;
 
 public class MainStage extends Stage {
@@ -14,7 +15,7 @@ public class MainStage extends Stage {
         setResizable(false);
         setOnCloseRequest(windowEvent -> {
             windowEvent.consume();
-//            Logger.getLogger().exit();
+            Logger.getLogger().exit();
             this.close();
             System.exit(0);
         });

@@ -22,4 +22,19 @@ public interface EventVisitor {
     Response deactivateAcc(SettingsStringEvent settingsStringEvent);
     Response changeAccType(ComboBoxEvent comboBoxEvent);
     Response changeLastSeen(ComboBoxEvent comboBoxEvent);
+
+
+    //Tweet Component//
+    Response likeTweet();
+    Response showComments();
+    Response forwardTweet();
+    Response reportTweet();
+    Response retweetTweet();
+    Response savePressed();
+
+    //Users//
+    Response blockAcc();
+    Response muteAcc();
+    Response viewProfile();
+
 }

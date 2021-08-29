@@ -26,6 +26,7 @@ import java.util.LinkedList;
 import java.util.Set;
 
 public class LogicalAgent implements ResponseVisitor {
+    private int token;
     private final EventSender eventSender;
     private LinkedList<Event> events;
 //    private Loop sendEventLoop;
@@ -38,6 +39,7 @@ public class LogicalAgent implements ResponseVisitor {
         this.events = new LinkedList<>();
         graphicalAgent = new GraphicalAgent(this::addEvent , stage);
         lock = new Object();
+        token = 0;
 //        sendEventLoop = new Loop(15,this::sendEvents);
     }
 
@@ -93,6 +95,7 @@ public class LogicalAgent implements ResponseVisitor {
 
     @Override
     public void finalizeSignIn(SignInResponse signInResponse) {
+        token = signInResponse.getToken();
         ((SignInCenterFXMLController)((SignInPage)graphicalAgent.getPage()).getSignInCenter().getFxmlController()).finalizeComp(signInResponse);
     }
 
@@ -121,5 +124,18 @@ public class LogicalAgent implements ResponseVisitor {
     @Override
     public void deleteAcc() {
         ((SettingsFXMLController)graphicalAgent.getMainPage().getCenterComp().getFxmlController()).exit();
+    }
+
+    @Override
+    public void startClient() {
+
+    }
+
+    @Override
+    public void exitClient() {
+        eventSender.close();
+        Logger.getLogger().exit();
+        graphicalAgent.getStage().close();
+        System.exit(0);
     }
 }

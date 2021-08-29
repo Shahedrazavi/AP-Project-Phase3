@@ -7,6 +7,7 @@ import response.ResponseVisitor;
 public class SignInResponse extends Response {
     private boolean isValid;
     private User signedInUser;
+    private int token;
 
     @Override
     public void visit(ResponseVisitor responseVisitor) {
@@ -27,5 +28,13 @@ public class SignInResponse extends Response {
 
     public void setSignedInUser(User signedInUser) {
         this.signedInUser = signedInUser;
+    }
+
+    public int getToken() {
+        return token;
+    }
+
+    public void setToken(int token) {
+        this.token = token;
     }
 }

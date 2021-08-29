@@ -1,84 +1,90 @@
-model/Notif.java
- model.Notif
- model.Notif$NotifType
-model/Model.java
- model.Model
-gson/Serializer.java
- gson.Serializer
-gson/Deserializer.java
- gson.Deserializer
-model/Image.java
- model.Image
-model/Tweet.java
- model.Tweet
-model/Message.java
- model.Message
-model/Chat.java
- model.Chat
- model.Chat$ChatType
-model/GroupChat.java
- model.GroupChat
-gson/Constants.java
- gson.Constants
-util/Loop.java
- util.Loop
-model/PVChat.java
- model.PVChat
-model/ChatLink.java
- model.ChatLink
-model/ID.java
- model.ID
-model/User.java
- model.User
- model.User$LastSeenType
-util/TimeTask.java
- util.TimeTask
 event/opening/OpeningEvent.java
  event.opening.OpeningEvent
 response/ResponseVisitor.java
  response.ResponseVisitor
 event/newTweet/NewTweetEvent.java
  event.newTweet.NewTweetEvent
-event/settings/ComboBoxEvent.java
- event.settings.ComboBoxEvent
-event/component/tweetComponent/TweetEvent.java
- event.component.tweetComponent.TweetEvent
+gson/Deserializer.java
+ gson.Deserializer
 response/auth/sidebar/LogOutResponse.java
  response.auth.sidebar.LogOutResponse
 response/newTweet/NewTweetResponse.java
  response.newTweet.NewTweetResponse
+model/Image.java
+ model.Image
+model/Tweet.java
+ model.Tweet
 event/auth/signIn/SignInFormEvent.java
  event.auth.signIn.SignInFormEvent
 response/EmptyResponse.java
  response.EmptyResponse
+util/TimeTask.java
+ util.TimeTask
+response/Response.java
+ response.Response
+model/GroupChat.java
+ model.GroupChat
+response/auth/registration/RegPage1Response.java
+ response.auth.registration.RegPage1Response
+util/Loop.java
+ util.Loop
+response/auth/registration/RegPage2Response.java
+ response.auth.registration.RegPage2Response
+model/ChatLink.java
+ model.ChatLink
+event/Event.java
+ event.Event
+model/User.java
+ model.User
+ model.User$LastSeenType
+response/StartClientResponse.java
+ response.StartClientResponse
+model/Model.java
+ model.Model
+response/ExitClientResponse.java
+ response.ExitClientResponse
+event/auth/registration/RegistrationFormEvent.java
+ event.auth.registration.RegistrationFormEvent
+ event.auth.registration.RegistrationFormEvent$RegFormEventLevel
+event/settings/ComboBoxEvent.java
+ event.settings.ComboBoxEvent
+event/component/tweetComponent/TweetEvent.java
+ event.component.tweetComponent.TweetEvent
+gson/Constants.java
+ gson.Constants
 response/settings/ChangeActResponse.java
  response.settings.ChangeActResponse
 event/StringEvent.java
  event.StringEvent
-response/Response.java
- response.Response
+model/Notif.java
+ model.Notif
+ model.Notif$NotifType
 event/settings/SettingsStringEvent.java
  event.settings.SettingsStringEvent
-response/auth/registration/RegPage1Response.java
- response.auth.registration.RegPage1Response
+event/AccountEvent.java
+ event.AccountEvent
+model/Chat.java
+ model.Chat
+ model.Chat$ChatType
+model/ID.java
+ model.ID
 event/sidebar/SidebarEvent.java
  event.sidebar.SidebarEvent
-response/auth/registration/RegPage2Response.java
- response.auth.registration.RegPage2Response
+model/PVChat.java
+ model.PVChat
 response/auth/signIn/SignInResponse.java
  response.auth.signIn.SignInResponse
-event/Event.java
- event.Event
+model/Message.java
+ model.Message
 response/settings/DeleteAccResponse.java
  response.settings.DeleteAccResponse
 event/EventVisitor.java
  event.EventVisitor
+gson/Serializer.java
+ gson.Serializer
 response/settings/ChangePassResponse.java
  response.settings.ChangePassResponse
 event/settings/ChangePassEvent.java
  event.settings.ChangePassEvent
 event/component/tweetViewer/TweetViewerEvent.java
  event.component.tweetViewer.TweetViewerEvent
-event/auth/registration/RegistrationFormEvent.java
- event.auth.registration.RegistrationFormEvent
- event.auth.registration.RegistrationFormEvent$RegFormEventLevel

@@ -15,7 +15,7 @@ public class SignInPageLogic {
         response = new SignInResponse();
     }
 
-    public Response check(SignInFormEvent formEvent){
+    public SignInResponse check(SignInFormEvent formEvent){
         boolean isValid = isInfoCorrect(formEvent);
 
 //        SignInCenterFXMLController controller = (SignInCenterFXMLController) formEvent.getSource();

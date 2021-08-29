@@ -7,6 +7,7 @@ import ui.GraphicalAgent;
 import ui.Page;
 //import ui.profile.Profile;
 import ui.newTweet.NewTweet;
+import ui.profile.Profile;
 import ui.settings.Settings;
 import ui.sidebar.Sidebar;
 import util.Logger;
@@ -77,7 +78,7 @@ public class MainPage extends Page {
     }
 
     public void goToProfilePage(User user) {
-//        centerComp = new Profile("sidebar",this, user);
+        centerComp = new Profile("sidebar",this, user);
         addNewCenterComp();
     }
 

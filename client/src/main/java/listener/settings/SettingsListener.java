@@ -12,10 +12,10 @@ public class SettingsListener extends Listener {
 
     public void eventOccurred(SettingsStringEvent event) {
         if (event.getCommand().equals("delete")) {
-//            logic.deleteAcc(event);
+            graphicalAgent.getListener().listen(event);
         }
         if (event.getCommand().equals("deactivate")) {
-//            logic.changeActivate(event);
+            graphicalAgent.getListener().listen(event);
         }
     }
 }

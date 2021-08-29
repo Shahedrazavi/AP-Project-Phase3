@@ -205,4 +205,7 @@ public class Logger {
         log("INFO level: User with username: \"" + username + "\" and ID: \"" + userID + "\" retweeted tweet with ID: \"" + tweetID +"\".(Comment ID is: \""+ commentID + "\")");
     }
 
+    public void clientShutdown(String username, String userID){
+        log("WARN level: Client of user with username: \"" + username + "\" and ID: \"" + userID + "\" has shut down.");
+    }
 }

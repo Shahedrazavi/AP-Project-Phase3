@@ -19,21 +19,29 @@ import model.User;
 import response.EmptyResponse;
 import response.Response;
 import response.auth.sidebar.LogOutResponse;
+import response.auth.signIn.SignInResponse;
 import util.Logger;
 import util.TimeTask;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+
 public class ClientHandler extends Thread implements EventVisitor {
+    private int token;
     private volatile boolean running;
     private final ResponseSender responseSender;
+    private User user;
 
 
     public ClientHandler(ResponseSender responseSender) {
         this.responseSender = responseSender;
+        token = 0;
     }
 
     public synchronized void start(){
         running = true;
         super.start();
+
     }
 
     @Override
@@ -42,13 +50,24 @@ public class ClientHandler extends Thread implements EventVisitor {
             try {
                 Event event = responseSender.getEvent();
                 System.out.println("got event");
-                responseSender.sendResponse(event.visit(this));
+                try {
+                    if(event.getToken()==token) responseSender.sendResponse(event.visit(this));
+                    else responseSender.sendResponse(new EmptyResponse());
+                }catch (NullPointerException e){
+                    shutdown();
+                }
                 System.out.println("sent response");
             }catch (Exception e){
                 e.printStackTrace();
             }
         }
         responseSender.close();
+    }
+
+    private void shutdown(){
+        new TimeTask(Config.getConfig("time").getProperty(Integer.class,"exitWait"),
+                ()-> this.running = false).start();
+        if(user!=null) Logger.getLogger().clientShutdown(user.getUsername(),user.getId().toString());
     }
 
     @Override
@@ -58,7 +77,17 @@ public class ClientHandler extends Thread implements EventVisitor {
 
     @Override
     public Response signInCheck(SignInFormEvent signInFormEvent) {
-        return new SignInPageLogic().check(signInFormEvent);
+        SignInResponse signInResponse = new SignInPageLogic().check(signInFormEvent);
+        if(signInResponse.isValid()){
+            this.user = signInResponse.getSignedInUser();
+            try {
+                this.token = SecureRandom.getInstanceStrong().nextInt(Config.getConfig("random").getProperty(Integer.class,"upperbound"))+1;
+                signInResponse.setToken(token);
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+        }
+        return signInResponse;
     }
 
     @Override
@@ -101,11 +130,58 @@ public class ClientHandler extends Thread implements EventVisitor {
 
     @Override
     public Response changeAccType(ComboBoxEvent comboBoxEvent) {
+        System.out.println("account type");
         return new SettingsLogic().changeAccType(comboBoxEvent);
     }
 
     @Override
     public Response changeLastSeen(ComboBoxEvent comboBoxEvent) {
+        System.out.println("last seen");
         return new SettingsLogic().changeLastSeenType(comboBoxEvent);
+    }
+
+    @Override
+    public Response likeTweet() {
+        return null;
+    }
+
+    @Override
+    public Response showComments() {
+        return null;
+    }
+
+    @Override
+    public Response forwardTweet() {
+        return null;
+    }
+
+    @Override
+    public Response reportTweet() {
+        return null;
+    }
+
+    @Override
+    public Response retweetTweet() {
+        return null;
+    }
+
+    @Override
+    public Response savePressed() {
+        return null;
+    }
+
+    @Override
+    public Response blockAcc() {
+        return null;
+    }
+
+    @Override
+    public Response muteAcc() {
+        return null;
+    }
+
+    @Override
+    public Response viewProfile() {
+        return null;
     }
 }

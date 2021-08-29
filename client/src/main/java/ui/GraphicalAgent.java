@@ -74,6 +74,10 @@ public class GraphicalAgent {
         return page;
     }
 
+    public Stage getStage() {
+        return stage;
+    }
+
     public MainPage getMainPage() {
         return mainPage;
     }
