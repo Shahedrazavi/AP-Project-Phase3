@@ -25,10 +25,10 @@ public class SidebarListener extends Listener {
             ((SidebarFXMLController)event.getSource()).getComponent().goToSelfProfile();
         }
         if (event.getCommand().equals("timeline")){
-
+            graphicalAgent.getMainPage().goToTimeline();
         }
         if (event.getCommand().equals("explore")){
-
+            graphicalAgent.getMainPage().goToExplore();
         }
         if (event.getCommand().equals("notifs")){
 

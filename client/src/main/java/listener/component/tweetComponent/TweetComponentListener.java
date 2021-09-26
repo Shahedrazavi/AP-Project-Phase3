@@ -18,7 +18,9 @@ public class TweetComponentListener extends Listener {
 
     public void eventOccurred(TweetEvent event){
         if (event.getCommand().equals("commentPressed")){
-//            logic.comment();
+        }
+        if (event.getCommand().equals("viewCommentsPressed")){
+            graphicalAgent.getMainPage().goToComments(event.getTweet());
         }
         if (event.getCommand().equals("viewTweetPhotoPressed")){
 //            logic.viewTweetPhoto();
@@ -26,6 +28,7 @@ public class TweetComponentListener extends Listener {
         if (event.getCommand().equals("forwardPressed")){
 //            logic.forwardTo();
         }
+
         else graphicalAgent.getListener().listen(event);
     }
 

@@ -72,7 +72,7 @@ public class SidebarFXMLController extends FXMLController {
 
     @FXML
     void homePressed(ActionEvent event) {
-        listener.eventOccurred(new SidebarEvent(this, "home", component.getLoggedInUser()));
+        listener.eventOccurred(new SidebarEvent(this, "timeline", component.getLoggedInUser()));
     }
 
     @FXML

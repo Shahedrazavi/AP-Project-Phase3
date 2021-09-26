@@ -1,11 +1,13 @@
 package ui.profile;
 
-import controller.profile.ProfileLogic;
+import event.GetTweetsEvent;
 import model.User;
 import response.Response;
+import response.TweetsListResponse;
 import ui.Component;
+import ui.GraphicalAgent;
 import ui.component.profileHeader.ProfileHeader;
-import ui.component.tweetViewer.TVContainerComponent;
+import ui.TVContainerComponent;
 import ui.component.tweetViewer.TweetViewer;
 import ui.mainView.MainPage;
 
@@ -18,8 +20,8 @@ public class Profile extends TVContainerComponent {
 
 //    private ProfileLogic logic;
 
-    public Profile(String fxmlName, MainPage parent , User loggedInUser , User targetUser) {
-        super(fxmlName);
+    public Profile(String fxmlName, GraphicalAgent graphicalAgent, MainPage parent , User loggedInUser , User targetUser) {
+        super(fxmlName , graphicalAgent);
         setParent(parent);
         setLoggedInUser(loggedInUser);
         this.targetUser = targetUser;
@@ -36,18 +38,19 @@ public class Profile extends TVContainerComponent {
         controller.setComponent(this);
         profileHeader = new ProfileHeader("profileHeader",graphicalAgent,this,loggedInUser);
         controller.setProfileSection();
-        fillTweetSection(controller);
     }
 
-    public void fillTweetSection(ProfileFXMLController controller){
-        //send request
+    public void fillTweetSection(){
+        ProfileFXMLController controller = (ProfileFXMLController) fxmlController;
         tweetSection = new TweetViewer("tweetViewer",graphicalAgent,this, loggedInUser,(MainPage) parent);
+        graphicalAgent.getListener().listen(new GetTweetsEvent(this,"profile",loggedInUser,targetUser));
         controller.hidePrivateLabel();
         controller.setTweetSection();
+        ((TweetViewer)tweetSection).fillComponent();
     }
 
-    public void updateTweets(Response response){
-
+    public void updateTweets(TweetsListResponse response){
+        ((TweetViewer)tweetSection).setTweets(response.getTweets());
     }
 
     public Component getProfileHeader() {

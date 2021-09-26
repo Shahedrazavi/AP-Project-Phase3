@@ -1,3 +1,5 @@
+package logicalAgent;
+
 import event.Event;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -5,6 +7,8 @@ import listener.EventSender;
 import listener.network.SocketEventSender;
 import response.Response;
 import response.ResponseVisitor;
+import response.TweetInfoResponse;
+import response.TweetsListResponse;
 import response.auth.registration.RegPage1Response;
 import response.auth.registration.RegPage2Response;
 import response.auth.signIn.SignInResponse;
@@ -16,9 +20,13 @@ import ui.auth.SignUpPage;
 import ui.auth.registration.RegistrationPage1FXMLController;
 import ui.auth.registration.RegistrationPage2FXMLController;
 import ui.auth.signIn.SignInCenterFXMLController;
+import ui.component.tweetComponent.TweetComponent;
+import ui.component.tweetViewer.TweetViewer;
 import ui.newTweet.NewTweet;
 import ui.newTweet.NewTweetFXMLController;
+import ui.profile.Profile;
 import ui.settings.SettingsFXMLController;
+import ui.tweetsPage.TweetsPage;
 import util.Logger;
 import util.Loop;
 
@@ -37,7 +45,7 @@ public class LogicalAgent implements ResponseVisitor {
     public LogicalAgent(SocketEventSender socketEventSender , Stage stage) {
         this.eventSender = socketEventSender;
         this.events = new LinkedList<>();
-        graphicalAgent = new GraphicalAgent(this::addEvent , stage);
+        graphicalAgent = new GraphicalAgent(this::addEvent , this);
         lock = new Object();
         token = 0;
 //        sendEventLoop = new Loop(15,this::sendEvents);
@@ -46,8 +54,14 @@ public class LogicalAgent implements ResponseVisitor {
     private void addEvent(Event event){
         synchronized (lock){
             event.setToken(token);
-            Response serverResponse = eventSender.send(event);
-            if (serverResponse != null) serverResponse.visit(this);
+            try {
+                Response serverResponse = eventSender.send(event);
+                if (serverResponse != null) serverResponse.visit(this);
+            }catch (Throwable t){
+                Response offlineResponse = eventSender.send(event);
+                offlineResponse.visit(this);
+            }
+
 //            events.add(event);
 //            System.out.println("event added");
         }
@@ -138,5 +152,30 @@ public class LogicalAgent implements ResponseVisitor {
         Logger.getLogger().exit();
         graphicalAgent.getStage().close();
         System.exit(0);
+    }
+
+    @Override
+    public void receiveTweetList(TweetsListResponse response) {
+        if (response.getCommand().equals("profile")){
+            ((Profile)graphicalAgent.getMainPage().getCenterComp()).updateTweets(response);
+        }
+        else {
+            ((TweetsPage)graphicalAgent.getMainPage().getCenterComp()).updateTweets(response);
+        }
+    }
+
+    @Override
+    public void receiveTweetInfo(TweetInfoResponse response) {
+        System.out.println(response.getProfileName());
+        if (graphicalAgent.getMainPage().getState()==0){
+            ((TweetViewer)((Profile)graphicalAgent.getMainPage().getCenterComp()).getTweetSection()).
+                    getTweetComponent().
+                    setTweetInfo(response.getRetweeter(), response.getProfileName(), response.getUsername(), response.getReplyingTo());
+        }
+        if (graphicalAgent.getMainPage().getState()==1){
+            ((TweetViewer)((TweetsPage)graphicalAgent.getMainPage().getCenterComp()).getTweetSection()).
+                    getTweetComponent().
+                    setTweetInfo(response.getRetweeter(), response.getProfileName(), response.getUsername(), response.getReplyingTo());
+        }
     }
 }

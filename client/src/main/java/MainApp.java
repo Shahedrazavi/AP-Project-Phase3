@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
 import listener.network.SocketEventSender;
+import logicalAgent.LogicalAgent;
 import util.Logger;
 
 import java.io.IOException;

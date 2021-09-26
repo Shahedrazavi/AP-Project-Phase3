@@ -1,42 +1,60 @@
 db/Context.java
  db.Context
+db/DBSet.java
+ db.DBSet
+controller/component/tweetViewer/TweetViewerLogic.java
+ controller.component.tweetViewer.TweetViewerLogic
+db/UserDB.java
+ db.UserDB
+controller/Controller.java
+ controller.Controller
+util/Logger.java
+ util.Logger
+controller/component/tweetComponent/UserController.java
+ controller.component.tweetComponent.UserController
+controller/settings/AccountController.java
+ controller.settings.AccountController
+Main.java
+ Main
+config/Config.java
+ config.Config
+controller/component/tweetComponent/TweetController.java
+ controller.component.tweetComponent.TweetController
+db/TweetDB.java
+ db.TweetDB
+controller/account/AccountController.java
+ controller.account.AccountController
 controller/auth/signIn/SignInController.java
  controller.auth.signIn.SignInController
+controller/tweetsList/TweetsListController.java
+ controller.tweetsList.TweetsListController
+controller/auth/AuthController.java
+ controller.auth.AuthController
 controller/newTweet/NewTweetLogic.java
  controller.newTweet.NewTweetLogic
 controller/auth/registration/RegistrationPage1Logic.java
  controller.auth.registration.RegistrationPage1Logic
 controller/network/SocketResponseSender.java
  controller.network.SocketResponseSender
-controller/Controller.java
- controller.Controller
-db/DBSet.java
- db.DBSet
-controller/ResponseSender.java
- controller.ResponseSender
-db/UserDB.java
- db.UserDB
+controller/tweetsList/TweetsListLogic.java
+ controller.tweetsList.TweetsListLogic
+controller/component/tweetComponent/TweetInfoController.java
+ controller.component.tweetComponent.TweetInfoController
+controller/account/AccountLogic.java
+ controller.account.AccountLogic
 controller/auth/registration/RegistrationPage2Logic.java
  controller.auth.registration.RegistrationPage2Logic
 controller/newTweet/NewTweetController.java
  controller.newTweet.NewTweetController
-config/Config.java
- config.Config
-Main.java
- Main
-controller/auth/AuthController.java
- controller.auth.AuthController
-controller/settings/AccountController.java
- controller.settings.AccountController
-util/Logger.java
- util.Logger
-db/TweetDB.java
- db.TweetDB
+controller/component/tweetComponent/TweetComponentLogic.java
+ controller.component.tweetComponent.TweetComponentLogic
+controller/settings/SettingsLogic.java
+ controller.settings.SettingsLogic
+controller/ResponseSender.java
+ controller.ResponseSender
 controller/auth/signIn/SignInPageLogic.java
  controller.auth.signIn.SignInPageLogic
 controller/ClientHandler.java
  controller.ClientHandler
-controller/settings/SettingsLogic.java
- controller.settings.SettingsLogic
 controller/SocketManager.java
  controller.SocketManager

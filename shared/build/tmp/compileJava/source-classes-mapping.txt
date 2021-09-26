@@ -10,6 +10,29 @@ gson/Constants.java
  gson.Constants
 util/TimeTask.java
  util.TimeTask
+model/Chat.java
+ model.Chat
+ model.Chat$ChatType
+model/GroupChat.java
+ model.GroupChat
+model/Notif.java
+ model.Notif
+ model.Notif$NotifType
+model/ChatLink.java
+ model.ChatLink
+model/User.java
+ model.User
+ model.User$LastSeenType
+model/Image.java
+ model.Image
+model/Tweet.java
+ model.Tweet
+model/Message.java
+ model.Message
+model/Model.java
+ model.Model
+model/PVChat.java
+ model.PVChat
 event/opening/OpeningEvent.java
  event.opening.OpeningEvent
 response/ResponseVisitor.java
@@ -20,33 +43,26 @@ response/auth/sidebar/LogOutResponse.java
  response.auth.sidebar.LogOutResponse
 response/newTweet/NewTweetResponse.java
  response.newTweet.NewTweetResponse
-model/Image.java
- model.Image
-model/Tweet.java
- model.Tweet
 event/auth/signIn/SignInFormEvent.java
  event.auth.signIn.SignInFormEvent
 response/EmptyResponse.java
  response.EmptyResponse
 response/Response.java
  response.Response
-model/GroupChat.java
- model.GroupChat
 response/auth/registration/RegPage1Response.java
  response.auth.registration.RegPage1Response
+response/StringResponse.java
+ response.StringResponse
 response/auth/registration/RegPage2Response.java
  response.auth.registration.RegPage2Response
-model/ChatLink.java
- model.ChatLink
+response/TweetsListResponse.java
+ response.TweetsListResponse
 event/Event.java
  event.Event
-model/User.java
- model.User
- model.User$LastSeenType
+response/TweetInfoResponse.java
+ response.TweetInfoResponse
 response/StartClientResponse.java
  response.StartClientResponse
-model/Model.java
- model.Model
 response/ExitClientResponse.java
  response.ExitClientResponse
 event/auth/registration/RegistrationFormEvent.java
@@ -62,28 +78,20 @@ response/settings/ChangeActResponse.java
  response.settings.ChangeActResponse
 event/StringEvent.java
  event.StringEvent
-model/Notif.java
- model.Notif
- model.Notif$NotifType
 event/settings/SettingsStringEvent.java
  event.settings.SettingsStringEvent
 event/AccountEvent.java
  event.AccountEvent
-model/Chat.java
- model.Chat
- model.Chat$ChatType
 event/sidebar/SidebarEvent.java
  event.sidebar.SidebarEvent
-model/PVChat.java
- model.PVChat
 response/auth/signIn/SignInResponse.java
  response.auth.signIn.SignInResponse
 event/GetTweetsEvent.java
  event.GetTweetsEvent
-model/Message.java
- model.Message
 response/settings/DeleteAccResponse.java
  response.settings.DeleteAccResponse
+event/GetTweetInfoEvent.java
+ event.GetTweetInfoEvent
 event/EventVisitor.java
  event.EventVisitor
 response/settings/ChangePassResponse.java

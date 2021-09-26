@@ -3,6 +3,7 @@ package ui;
 import event.Event;
 import javafx.stage.Stage;
 import listener.EventListener;
+import logicalAgent.LogicalAgent;
 import model.User;
 import ui.auth.SignInPage;
 import ui.auth.SignUpPage;
@@ -13,6 +14,7 @@ import java.util.Stack;
 
 public class GraphicalAgent {
     private final EventListener listener;
+    private LogicalAgent logicalAgent;
 
     private Stack<Page> pageStack;
 
@@ -21,14 +23,18 @@ public class GraphicalAgent {
     private MainPage mainPage;
 
 
-    public GraphicalAgent(EventListener listener, Stage stage) {
-        this.stage = stage;
+    public GraphicalAgent(EventListener listener , LogicalAgent logicalAgent) {
         this.listener = listener;
         this.pageStack = new Stack<>();
+        this.logicalAgent = logicalAgent;
     }
 
     public EventListener getListener() {
         return listener;
+    }
+
+    public LogicalAgent getLogicalAgent() {
+        return logicalAgent;
     }
 
     public void initialize(){

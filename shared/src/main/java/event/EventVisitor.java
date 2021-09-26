@@ -42,6 +42,8 @@ public interface EventVisitor {
     Response getTweetsList(GetTweetsEvent event);
 
 
+    //Tweet//
+    Response getTweetInfo(GetTweetInfoEvent event);
 
 //    Response showSendingList();
 

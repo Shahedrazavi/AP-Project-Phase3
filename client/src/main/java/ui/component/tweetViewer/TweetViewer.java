@@ -4,6 +4,7 @@ import model.Tweet;
 import model.User;
 import ui.Component;
 import ui.GraphicalAgent;
+import ui.TVContainerComponent;
 import ui.component.tweetComponent.TweetComponent;
 import ui.mainView.MainPage;
 
@@ -13,6 +14,7 @@ public class TweetViewer extends Component {
     private LinkedList<Tweet> tweets;
     private int index;
     private User loggedInUser;
+    private TweetComponent tweetComponent;
 
     private MainPage mainPage;
 
@@ -23,6 +25,7 @@ public class TweetViewer extends Component {
         this.index = 0;
         this.loggedInUser = loggedInUser;
         this.mainPage = mainPage;
+        this.tweets = new LinkedList<>();
         initialize();
     }
 
@@ -31,15 +34,17 @@ public class TweetViewer extends Component {
         TweetViewerFXMLController controller = (TweetViewerFXMLController) fxmlController;
         controller.setComponent(this);
         controller.initializeListener();
-        fillComponent(controller);
+        fillComponent();
     }
 
-    public void fillComponent(TweetViewerFXMLController controller){
+    public void fillComponent(){
+        TweetViewerFXMLController controller = (TweetViewerFXMLController) fxmlController;
         if (tweets.isEmpty()){
             controller.disableButtons();
             controller.showEmptyLabel();
         }
         else {
+            controller.hideEmptyLabel();
             index = tweets.size()-1;
             showTweetComponent(controller);
         }
@@ -59,7 +64,8 @@ public class TweetViewer extends Component {
             controller.enablePrevious();
         }
         Tweet showingTweet = tweets.get(index);
-        TweetComponent tweetComponent = new TweetComponent("tweetComponent",graphicalAgent,this,showingTweet,loggedInUser);
+        tweetComponent = new TweetComponent("tweetComponent",graphicalAgent,this,showingTweet,loggedInUser);
+        tweetComponent.initialize();
         controller.setComponentPane(tweetComponent);
     }
 
@@ -74,11 +80,15 @@ public class TweetViewer extends Component {
 
     }
 
-    public void goToProfile(User user){
-        mainPage.goToProfile(user);
+    public TweetComponent getTweetComponent() {
+        return tweetComponent;
     }
 
-    public LinkedList<Tweet> getTweets() {
-        return tweets;
+    public void goToProfile(User user){
+        mainPage.goToProfilePage(user);
+    }
+
+    public void setTweets(LinkedList<Tweet> tweets) {
+        this.tweets = tweets;
     }
 }

@@ -83,12 +83,29 @@ public class TweetComponentFXMLController extends FXMLController{
 //            viewTweetPhotoPressed();
 //        });
     }
-    public void setTweetInfo(){
+    public void setTweetInfo(String retweeter, String profileName, String username, String replyingTo){
+
         Tweet tweet = component.getTweet();
 //        usernameLabel.setText(logic.getUsername(tweet.getWriterID()));
         tweetTextLabel.setText(tweet.getText());
-        if(tweet.getImageID()!=null){
+        usernameLabel.setText(username);
+        ProfileNameLabel.setText(profileName);
+        if(retweeter.equals("")){
+            retweetedLabel.setVisible(false);
         }
+        else {
+            retweetedLabel.setVisible(true);
+            retweetedLabel.setText(retweeter);
+        }
+
+        if(replyingTo.equals("")){
+            replyingToLabel.setVisible(false);
+        }
+        else {
+            replyingToLabel.setVisible(false);
+            replyingToLabel.setText(replyingTo);
+        }
+
     }
 
     public void configButtons(){

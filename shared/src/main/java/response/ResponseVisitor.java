@@ -18,4 +18,9 @@ public interface ResponseVisitor {
     void deleteAcc();
     void exitClient();
     void startClient();
+
+
+    void receiveTweetList(TweetsListResponse response);
+
+    void receiveTweetInfo(TweetInfoResponse response);
 }

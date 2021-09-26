@@ -6,11 +6,11 @@ import controller.auth.registration.RegistrationPage1Logic;
 import controller.auth.registration.RegistrationPage2Logic;
 import controller.auth.signIn.SignInPageLogic;
 import controller.component.tweetComponent.TweetComponentLogic;
+import controller.component.tweetComponent.TweetInfoController;
 import controller.newTweet.NewTweetLogic;
 import controller.settings.SettingsLogic;
-import event.AccountEvent;
-import event.Event;
-import event.EventVisitor;
+import controller.tweetsList.TweetsListLogic;
+import event.*;
 import event.auth.registration.RegistrationFormEvent;
 import event.auth.signIn.SignInFormEvent;
 import event.component.tweetComponent.TweetEvent;
@@ -19,9 +19,11 @@ import event.opening.OpeningEvent;
 import event.settings.ChangePassEvent;
 import event.settings.ComboBoxEvent;
 import event.settings.SettingsStringEvent;
+import model.Tweet;
 import model.User;
 import response.EmptyResponse;
 import response.Response;
+import response.TweetInfoResponse;
 import response.auth.sidebar.LogOutResponse;
 import response.auth.signIn.SignInResponse;
 import util.Logger;
@@ -71,7 +73,9 @@ public class ClientHandler extends Thread implements EventVisitor {
     private void shutdown(){
         new TimeTask(Config.getConfig("time").getProperty(Integer.class,"exitWait"),
                 ()-> this.running = false).start();
-        if(user!=null) Logger.getLogger().clientShutdown(user.getUsername(),user.getId().toString());
+//        if(user!=null)
+//            new TimeTask(Config.getConfig("time").getProperty(Integer.class,"exitWait"),
+//                    ()-> Logger.getLogger().clientShutdown(user.getUsername(),user.getId().toString())).start();
     }
 
     @Override
@@ -189,5 +193,26 @@ public class ClientHandler extends Thread implements EventVisitor {
     @Override
     public Response viewProfile(AccountEvent accountEvent) {
         return new AccountLogic(accountEvent.getTargetTweet(), accountEvent.getLoggedInUser()).goToProfile();
+    }
+
+    @Override
+    public Response getTweetsList(GetTweetsEvent event) {
+        if (event.getCommand().equals("profile"))
+            return new TweetsListLogic().getUserTweets(event.getLoggedInUser(),event.getTargetUser());
+        if (event.getCommand().equals("timeline"))
+            return new TweetsListLogic().getTimeline(event.getLoggedInUser());
+        if (event.getCommand().equals("explore"))
+            return new TweetsListLogic().getExplore();
+        if (event.getCommand().equals("comments"))
+            return new TweetsListLogic().getCommentTweets(event.getLoggedInUser(),event.getTargetTweet());
+        return new EmptyResponse();
+    }
+
+    @Override
+    public Response getTweetInfo(GetTweetInfoEvent event) {
+        Tweet tweet = event.getTweet();
+        System.out.println("QAQQQ");
+        TweetInfoController controller = new TweetInfoController(tweet);
+        return new TweetInfoResponse(event.getSource(), controller.getRetweeter(), controller.getProfileName(), controller.getUsername(), controller.getReplyingTo());
     }
 }

@@ -2,50 +2,46 @@ ui/FXMLController.java
  ui.FXMLController
 util/Logger.java
  util.Logger
-config/Config.java
- config.Config
 ui/MainStage.java
  ui.MainStage
-ui/sidebar/Sidebar.java
- ui.sidebar.Sidebar
-ui/newTweet/NewTweet.java
- ui.newTweet.NewTweet
+config/Config.java
+ config.Config
+offline/OfflineDB.java
+ offline.OfflineDB
+MainApp.java
+ MainApp
+ui/component/profileHeader/ProfileHeaderFXMLController.java
+ ui.component.profileHeader.ProfileHeaderFXMLController
+ui/tweetsPage/TweetsPage.java
+ ui.tweetsPage.TweetsPage
 ui/opening/OpeningPageFXMLController.java
  ui.opening.OpeningPageFXMLController
 ui/auth/registration/RegistrationPage1.java
  ui.auth.registration.RegistrationPage1
 ui/auth/SignUpPage.java
  ui.auth.SignUpPage
-ui/auth/SignInPageFXMLController.java
- ui.auth.SignInPageFXMLController
-listener/Listener.java
- listener.Listener
 ui/Component.java
  ui.Component
-MainApp.java
- MainApp
+offline/OfflineHandler.java
+ offline.OfflineHandler
 ui/auth/SignInPage.java
  ui.auth.SignInPage
 ui/auth/SignUpPageFXMLController.java
  ui.auth.SignUpPageFXMLController
 listener/newTweet/NewTweetListener.java
  listener.newTweet.NewTweetListener
-ui/auth/signIn/SignInCenterFXMLController.java
- ui.auth.signIn.SignInCenterFXMLController
+ui/profile/Profile.java
+ ui.profile.Profile
 listener/sidebar/SidebarListener.java
  listener.sidebar.SidebarListener
-listener/auth/registration/RegistrationFormListener1.java
- listener.auth.registration.RegistrationFormListener1
+ui/settings/SettingsFXMLController.java
+ ui.settings.SettingsFXMLController
 listener/auth/signIn/SignInFormListener.java
  listener.auth.signIn.SignInFormListener
 ui/mainView/MainViewFXMLController.java
  ui.mainView.MainViewFXMLController
-ui/auth/registration/RegistrationPage2.java
- ui.auth.registration.RegistrationPage2
-ui/GraphicalAgent.java
- ui.GraphicalAgent
-listener/opening/OpeningListener.java
- listener.opening.OpeningListener
+listener/settings/ComboBoxListener.java
+ listener.settings.ComboBoxListener
 ui/settings/Settings.java
  ui.settings.Settings
 ui/Page.java
@@ -58,31 +54,65 @@ ui/auth/registration/RegistrationPage2FXMLController.java
  ui.auth.registration.RegistrationPage2FXMLController
 ui/auth/registration/RegistrationPage1FXMLController.java
  ui.auth.registration.RegistrationPage1FXMLController
+ui/component/profileHeader/ProfileHeader.java
+ ui.component.profileHeader.ProfileHeader
+ui/tweetsPage/TweetsPageFXMLController.java
+ ui.tweetsPage.TweetsPageFXMLController
+listener/settings/SettingsListener.java
+ listener.settings.SettingsListener
+ui/auth/signIn/SignInCenter.java
+ ui.auth.signIn.SignInCenter
+ui/component/backButton/BackButton.java
+ ui.component.backButton.BackButton
+logicalAgent/LogicalAgent.java
+ logicalAgent.LogicalAgent
+listener/auth/registration/RegistrationFormListener1.java
+ listener.auth.registration.RegistrationFormListener1
+listener/opening/OpeningListener.java
+ listener.opening.OpeningListener
+ui/sidebar/SidebarFXMLController.java
+ ui.sidebar.SidebarFXMLController
+ui/TVContainerComponent.java
+ ui.TVContainerComponent
+ui/sidebar/Sidebar.java
+ ui.sidebar.Sidebar
+ui/newTweet/NewTweet.java
+ ui.newTweet.NewTweet
+listener/component/tweetViewer/TweetViewerListener.java
+ listener.component.tweetViewer.TweetViewerListener
+listener/settings/ChangePassListener.java
+ listener.settings.ChangePassListener
+listener/Listener.java
+ listener.Listener
+ui/auth/signIn/SignInCenterFXMLController.java
+ ui.auth.signIn.SignInCenterFXMLController
+ui/auth/registration/RegistrationPage2.java
+ ui.auth.registration.RegistrationPage2
+ui/component/tweetComponent/TweetComponent.java
+ ui.component.tweetComponent.TweetComponent
+ui/component/tweetViewer/TweetViewerFXMLController.java
+ ui.component.tweetViewer.TweetViewerFXMLController
+ui/GraphicalAgent.java
+ ui.GraphicalAgent
+ui/component/tweetViewer/TweetViewer.java
+ ui.component.tweetViewer.TweetViewer
+ui/profile/ProfileFXMLController.java
+ ui.profile.ProfileFXMLController
 ui/mainView/MainPage.java
  ui.mainView.MainPage
 listener/auth/registration/RegistrationFormListener2.java
  listener.auth.registration.RegistrationFormListener2
-ui/sidebar/SidebarFXMLController.java
- ui.sidebar.SidebarFXMLController
 ui/opening/OpeningPage.java
  ui.opening.OpeningPage
-ui/auth/signIn/SignInCenter.java
- ui.auth.signIn.SignInCenter
 listener/EventListener.java
  listener.EventListener
-LogicalAgent.java
- LogicalAgent
 ui/component/backButton/BackButtonFXMLController.java
  ui.component.backButton.BackButtonFXMLController
 listener/network/SocketEventSender.java
  listener.network.SocketEventSender
-ui/component/backButton/BackButton.java
- ui.component.backButton.BackButton
-listener/settings/SettingsListener.java
- listener.settings.SettingsListener
-listener/settings/ComboBoxListener.java
- listener.settings.ComboBoxListener
-ui/settings/SettingsFXMLController.java
- ui.settings.SettingsFXMLController
-listener/settings/ChangePassListener.java
- listener.settings.ChangePassListener
+ui/auth/SignInPageFXMLController.java
+ ui.auth.SignInPageFXMLController
+listener/component/tweetComponent/TweetComponentListener.java
+ listener.component.tweetComponent.TweetComponentListener
+ui/component/tweetComponent/TweetComponentFXMLController.java
+ ui.component.tweetComponent.TweetComponentFXMLController
